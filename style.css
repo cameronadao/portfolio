@@ -12,6 +12,10 @@ body {
   line-height: 1.6;
 }
 
+p {
+  margin: 80px;
+}
+
 /* === Header & Navigation === */
 header nav {
   display: flex;
@@ -76,6 +80,10 @@ h2 {
   margin-bottom: 20px;
 }
 
+.text-content h2 {
+  margin-bottom: 20px;
+}
+
 .text-content p {
   font-size: 1.2em;
   text-align: justify;
@@ -95,6 +103,7 @@ h2 {
 .a-propos-list {
   font-size: 1.2em;
   text-align: justify;
+  margin-left: 100px;
 }
 
 /* === Formulaire === */
@@ -124,9 +133,13 @@ input[type="submit"] {
   margin: 30px auto 0;
   background-color: #007bff;
   color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s;
+  border: none;
 }
 
 input[type="submit"]:hover {
@@ -195,6 +208,41 @@ input[type="submit"]:hover {
   background-color: #0056b3;
 }
 
+/* === Services Grid (NOUVEAU) === */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 40px 10%;
+}
+
+.service-box {
+  background-color: #1c1c1c;
+  padding: 50px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.service-box h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #00aaff;
+}
+
+.service-box p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #dddddd;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
 /* === Footer === */
 footer {
   background-color: #2e2e2e;
@@ -247,6 +295,10 @@ footer ul li a:hover {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   h1 {
     font-size: 80px;
     margin-left: 20px;
@@ -282,6 +334,10 @@ footer ul li a:hover {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
   h1 {
     font-size: 48px;
     margin-left: 10px;
@@ -299,15 +355,15 @@ footer ul li a:hover {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .image-item {
+    height: 160px;
+  }
+
   h1 {
     font-size: 38px;
   }
 
   h2 {
     font-size: 20px;
-  }
-
-  .image-item {
-    height: 160px;
   }
 }
