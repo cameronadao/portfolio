@@ -253,3 +253,67 @@ header nav {
 .button:hover {
     background-color: #0056b3;
 }
+
+/* Default styles for larger screens */
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+/* Pour les écrans plus petits (tablettes) */
+@media only screen and (max-width: 768px) {
+  body {
+      font-size: 14px;
+  }
+
+  header {
+      padding: 10px;
+  }
+
+  /* Ajuster la largeur des images */
+  img {
+      width: 100%;
+      height: auto;
+  }
+
+  /* Exemple de navigation verticale sur mobile */
+  nav {
+      display: block;
+  }
+
+  /* Recentrer les éléments */
+  .container {
+      width: 90%;
+      margin: 0 auto;
+  }
+}
+
+/* Pour les écrans encore plus petits (mobiles) */
+@media only screen and (max-width: 480px) {
+  body {
+      font-size: 12px;
+  }
+
+  header {
+      padding: 5px;
+  }
+
+  /* Réduire la taille des images */
+  img {
+      width: 100%;
+      height: auto;
+  }
+
+  /* Cacher certains éléments sur mobile */
+  .sidebar {
+      display: none;
+  }
+  
+  /* Optimiser la mise en page */
+  .container {
+      width: 100%;
+      padding: 0 10px;
+  }
+}
