@@ -1,0 +1,194 @@
+/* === Header & Navigation === */
+header nav {
+    display: flex; /* Active Flexbox pour organiser les éléments en ligne */
+    justify-content: space-between; /* Espace entre le logo à gauche et les liens à droite */
+    align-items: center; /* Centre verticalement les éléments */
+    padding: 10px 20px; /* Ajoute de l’espace autour du contenu du header */
+  }
+  
+  .nav-links {
+    display: flex; /* Les liens sont alignés en ligne */
+    gap: 20px; /* Espace horizontal entre chaque lien */
+    font-weight: normal; /* Texte non-gras par défaut */
+    font-size: 12px; /* Taille de police des liens */
+  }
+  
+  .nav-links a {
+    text-decoration: none; /* Supprime le soulignement des liens */
+    color: white; /* Couleur blanche pour les liens */
+    font-weight: bolder; /* Texte en gras */
+  }
+  
+  /* === Style général du body === */
+  body {
+    font-family: "montserrat", sans-serif; /* Police principale du site */
+    background-color: black; /* Fond noir */
+    color: white; /* Texte blanc */
+    margin: 0; /* Supprime les marges par défaut du body */
+    padding: 0; /* Supprime les paddings par défaut du body */
+  }
+  
+  /* === Titres === */
+  h1 {
+    color: white; /* Couleur du texte */
+    font-size: 128px; /* Taille très grande (équivaut à 128px) */
+    margin-left: 37px; /* Marge à gauche du titre */
+    font-weight: bolder; /* Texte très gras */
+  }
+  
+  h2 {
+    color: white; /* Couleur du texte */
+    font-size: 48px; /* Taille du sous-titre */
+    margin-left: 37px; /* Marge à gauche */
+    font-weight: bolder; /* Texte gras */
+  }
+  
+  /* === Pied de page === */
+  footer {
+    background-color: #2E2E2E; /* Couleur anthracite pour le fond du footer */
+    color: white; /* Texte en blanc */
+    padding: 20px; /* Espace intérieur du footer */
+  }
+  
+  .footer-container {
+    display: flex; /* Active Flexbox pour organiser les colonnes */
+    justify-content: space-between; /* Répartit les colonnes uniformément */
+    flex-wrap: wrap; /* Permet le retour à la ligne sur petits écrans */
+  }
+  
+  .footer-container div {
+    flex: 1; /* Chaque div prend une part égale de l'espace */
+    margin: 10px; /* Espace autour de chaque colonne */
+  }
+  
+  .footer-logo img {
+    max-height: 100%; /* L’image prend la hauteur maximale du footer */
+    max-width: 100px; /* Largeur maximale du logo */
+  }
+  
+  footer h3 {
+    font-size: 1.2em; /* Taille du titre des colonnes */
+    margin-bottom: 10px; /* Espacement entre le titre et la liste */
+  }
+  
+  footer ul {
+    list-style-type: none; /* Supprime les puces */
+    padding: 0; /* Supprime les marges internes de la liste */
+  }
+  
+  footer ul li {
+    margin-bottom: 8px; /* Espace entre chaque élément de liste */
+  }
+  
+  footer ul li a {
+    text-decoration: none; /* Pas de soulignement par défaut */
+    color: white; /* Couleur du texte */
+  }
+  
+  footer ul li a:hover {
+    text-decoration: underline; /* Ajoute un soulignement au survol */
+  }
+  
+  /* Répétition : configuration de la nav (peut être fusionnée avec header nav) */
+  nav {
+    display: flex;
+    flex-direction: row; /* Les éléments sont alignés horizontalement */
+    align-items: center; /* Alignement vertical centré */
+    justify-content: space-between; /* Répartit les éléments sur toute la largeur */
+  }
+  
+  /* === Section À propos simple === */
+  .a-propos {
+    text-align: justify; /* Texte justifié */
+  }
+  
+  /* === Section complète À propos avec image === */
+  .about {
+    display: flex; /* Mise en ligne des éléments texte + image */
+    justify-content: space-between; /* Espace entre les deux blocs */
+    align-items: center; /* Aligne verticalement */
+    padding: 80px; /* Grand padding pour aérer la section */
+  }
+  
+  .about-content {
+    display: flex; /* Deux blocs côte à côte */
+    justify-content: space-between;
+    width: 80%; /* ⚠️ Erreur ici : à corriger en 100% ou 100vw selon le besoin */
+  }
+  
+  .text-content {
+    flex: 1; /* Le texte occupe tout l'espace restant */
+    padding-right: 20px; /* Espace entre le texte et la photo */
+  }
+  
+  .text-content h1 {
+    font-size: 2.5em; /* Taille du titre */
+    margin-bottom: 20px; /* Espace sous le titre */
+  }
+  
+  .text-content p {
+    font-size: 1.2em;
+    text-align: justify; /* Justifie le paragraphe */
+    line-height: 1.6; /* Hauteur de ligne pour une meilleure lisibilité */
+  }
+  
+  .photo {
+    flex: 0 0 300px; /* Largeur fixe de 300px pour la photo */
+    max-width: 100%; /* Ne dépasse pas son conteneur */
+  }
+  
+  .photo img {
+    width: 100%; /* Image s’adapte à la largeur */
+    height: auto; /* Hauteur proportionnelle */
+    border-radius: 8px; /* Bords arrondis (optionnel) */
+  }
+  
+  /* Liste personnalisée pour la section À propos */
+  .a-propos-list {
+    font-size: 1.2em;
+    text-align: justify; /* Justifie les textes de la liste */
+    line-height: 1.6;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: auto;
+    color: white;
+  }
+  
+  .form-nom-email {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  
+  .form-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  input,
+  textarea {
+    padding: 15px;
+    border-radius: 3px;
+    border: none;
+  }
+  
+  label {
+    margin-bottom: 10px;
+  }
+  
+  input[type='submit'] {
+    width: 200px;
+    margin: auto;
+    margin-top: 30px;
+  }
+
+  p{
+    margin: 10%;
+    line-height: 1.6;
+  }
