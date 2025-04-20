@@ -337,6 +337,10 @@ footer ul li a:hover {
     margin-left: 20px;
   }
 
+  p {
+    margin-left: 40px;
+  }
+
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -378,6 +382,10 @@ footer ul li a:hover {
   h2 {
     font-size: 24px;
     margin-left: 10px;
+  }
+
+  p {
+    margin-left: 20px;
   }
 }
 
