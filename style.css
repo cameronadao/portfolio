@@ -107,20 +107,20 @@ header nav {
 
 
 /* === Services Section === */
-.intro-section {
+.intro-services {
   text-align: center;
   max-width: 800px;
   margin: 60px auto 40px;
   padding: 0 20px;
 }
 
-.intro-section h1 {
+.intro-services h1 {
   font-size: 64px;
   font-weight: 700;
   margin-bottom: 20px;
 }
 
-.intro-section p {
+.intro-services p {
   font-size: 18px;
   line-height: 1.8;
   color: #dddddd;
@@ -166,6 +166,26 @@ header nav {
 }
 
 /* === Projects Section === */
+.intro-projets {
+  text-align: center;
+  max-width: 800px;
+  margin: 60px auto 40px;
+  padding: 0 20px;
+}
+
+.intro-projets h1 {
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.intro-projets p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #dddddd;
+}
+
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
