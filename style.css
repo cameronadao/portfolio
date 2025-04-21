@@ -97,6 +97,7 @@ header nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  line-height: 2;
   width:100%;
   gap: 40px;
 }
@@ -122,7 +123,7 @@ header nav {
 }
 
 .photo {
-  flex: 0 0 300px;
+  flex: 0 0 360px;
   max-width: 100%;
 }
 
