@@ -80,7 +80,7 @@ header nav {
   width: 100%;
   height: auto;
   display: block;
-  margin: 0 auto;
+  margin-right: 100px;
   border-radius: 8px;
 }
 
