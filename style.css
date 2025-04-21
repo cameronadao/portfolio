@@ -51,6 +51,30 @@ header nav {
   font-weight: bold;
 }
 
+/* === Index Content === */
+.index-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.index-content .text-content {
+  flex: 1;
+}
+
+.index-content .photo {
+  flex: 0 0 300px;
+  max-width: 100%;
+  margin-right: 100PX;
+}
+
+.index-content .photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
 /* === À propos === */
 .about {
   display: flex;
@@ -217,7 +241,7 @@ header nav {
 
 .project-card a.button {
   position: absolute;
-  top: 35%;
+  top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #007bff;
