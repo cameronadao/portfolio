@@ -537,6 +537,23 @@ footer ul li a:hover {
     text-align: center;
   }
 }
+@media screen and (max-width: 768px) {
+  .index-content .photo {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin-right: 0;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .index-content .photo {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin-right: 0;
+    margin-top: 20px;
+  }
+}
 .project-card:hover img {
   opacity: 0.7;
 }
