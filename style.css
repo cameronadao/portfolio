@@ -84,6 +84,7 @@ header nav {
   border-radius: 8px;
 }
 
+
 /* === À propos === */
 .about {
   display: flex;
@@ -91,6 +92,7 @@ header nav {
   align-items: center;
   padding: 80px 20px;
   flex-wrap: wrap;
+  background-color: black;
 }
 
 .about-content {
@@ -197,6 +199,10 @@ header nav {
   margin-bottom: 10px;
   font-size: 15px;
   color: #dddddd;
+}
+
+.service-p{
+  margin: 20px;
 }
 
 /* === Projects Section === */
