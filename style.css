@@ -84,6 +84,24 @@ header nav {
   border-radius: 8px;
 }
 
+.text-intro{
+  margin-left: 37px;
+}
+
+.index-button{
+  width: 200px;
+  margin: 30px auto 0;
+  margin-left: 150px;
+  background-color: #007bff;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s;
+  align-items: center;
+}
 
 /* === À propos === */
 .about {
@@ -228,7 +246,7 @@ header nav {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, auto);
   gap: 40px;
   padding: 40px 5%;
