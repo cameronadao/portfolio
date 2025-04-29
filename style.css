@@ -719,3 +719,18 @@ footer ul li a:hover {
     font-size: 12px;
   }
 }
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .index-button {
+    display: block;
+    margin: 1rem auto;
+    text-align: center;
+  }
+}
