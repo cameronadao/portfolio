@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TodoLife</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <h1>TodoLife</h1>
+  <div class="todo-container">
+    <div class="input-group">
+      <input type="text" id="todoInput" class="todo-input" placeholder="Ajouter une tâche...">
+      <div id="error-message" style="display: none; color: red;">Merci d’écrire une tâche avant de l’ajouter.</div>
+      <input type="date" id="todoDate" class="todo-date">
+      <select id="prioritySelect" class="priority-select">
+        <option value="low">Basse</option>
+        <option value="medium">Moyenne</option>
+        <option value="high">Haute</option>
+      </select>
+    </div>
+    <div class="filters">
+      <button onclick="setFilter('all')" id="filter-all" class="active">Toutes</button>
+      <button onclick="setFilter('active')" id="filter-active">À faire</button>
+      <button onclick="setFilter('completed')" id="filter-completed">Complètes</button>
+    </div>
+    <div class="notification-toggle">
+      <label><input type="checkbox" id="notifToggle"> Activer les notifications pour les tâches en retard</label>
+    </div>
+    <div class="clear-all">
+      <button onclick="clearAllTodos()">Supprimer toutes les tâches</button>
+    </div>
+    <ul id="todoList" class="todo-list"></ul>
+  </div>
+
+  <script>
+    let todos = [];
+    let filter = 'all';
+
+    function addTodo() {
+      const todoInput = document.getElementById("todoInput");
+      const todoDate = document.getElementById("todoDate");
+      const prioritySelect = document.getElementById("prioritySelect");
+      const errorMessage = document.getElementById("error-message");
+
+      const task = todoInput.value.trim();
+      const date = todoDate.value;
+      const priority = prioritySelect.value;
+
+      if (!task) {
+        errorMessage.style.display = "block";
+        return;
+      } else {
+        errorMessage.style.display = "none";
+      }
+
+      todos.push({ task, date, priority, completed: false });
+      todoInput.value = "";
+      todoDate.value = "";
+      prioritySelect.value = "low";
+
+      renderTodos();
+    }
+
+    function renderTodos() {
+      const todoList = document.getElementById("todoList");
+      todoList.innerHTML = "";
+
+      const filteredTodos = todos.filter(todo => {
+        if (filter === 'all') return true;
+        if (filter === 'active') return !todo.completed;
+        if (filter === 'completed') return todo.completed;
+      });
+
+      filteredTodos.forEach((todo, index) => {
+        const li = document.createElement("li");
+        li.className = `todo-item ${todo.completed ? "completed" : ""} ${todo.priority}`;
+
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.checked = todo.completed;
+        checkbox.addEventListener("change", () => toggleTodo(index));
+        li.appendChild(checkbox);
+
+        const span = document.createElement("span");
+        span.textContent = `${todo.task} - ${todo.date || "Pas de date"} (${todo.priority})`;
+        li.appendChild(span);
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "Supprimer";
+        deleteBtn.addEventListener("click", () => deleteTodo(index));
+        li.appendChild(deleteBtn);
+
+        todoList.appendChild(li);
+      });
+    }
+
+    function toggleTodo(index) {
+      todos[index].completed = !todos[index].completed;
+      renderTodos();
+    }
+
+    function deleteTodo(index) {
+      todos.splice(index, 1);
+      renderTodos();
+    }
+
+    function clearAllTodos() {
+      todos = [];
+      renderTodos();
+    }
+
+    function setFilter(newFilter) {
+      filter = newFilter;
+      document.querySelectorAll(".filters button").forEach(btn => btn.classList.remove("active"));
+      document.getElementById(`filter-${newFilter}`).classList.add("active");
+      renderTodos();
+    }
+
+    document.getElementById("todoInput").addEventListener("keypress", function(e) {
+      if (e.key === "Enter") addTodo();
+    });
+
+    document.getElementById("notifToggle").addEventListener("change", function() {
+      if (this.checked) {
+        alert("Notifications activées ! (Simulées)");
+      } else {
+        alert("Notifications désactivées.");
+      }
+    });
+
+    renderTodos();
+  </script>
+</body>
+</html>
