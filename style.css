@@ -352,7 +352,7 @@ section {
 
 .project-card a.button {
   position: absolute;
-  top: 25%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #007bff;
@@ -439,6 +439,21 @@ form.contact-form {
 
 .contact-form button:hover {
   background-color: #0056b3;
+}
+
+.lang-switch {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.lang-switch select {
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  background-color: white;
+  cursor: pointer;
 }
 
 /* === Footer === */

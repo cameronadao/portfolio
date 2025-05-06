@@ -1,137 +1,320 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TodoLife</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ToDoLife</title>
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/2560px-Flag_of_France.svg.png" type="image/png"/>
+  <style>
+    /* Base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #00b4d8, #00f5d4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #333;
+      flex-direction: column;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: white;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .language-selector {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+    }
+
+    .language-selector button {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .language-selector img {
+      width: 30px;
+      margin-left: 10px;
+    }
+
+    .todo-container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .input-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .todo-input, .todo-date, .priority-select {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    .todo-date, .priority-select {
+      max-width: 150px;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 15px;
+      justify-content: space-around;
+    }
+
+    .filters button {
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      cursor: pointer;
+      background-color: white;
+    }
+
+    .filters button.active {
+      background-color: #00f5d4;
+      color: white;
+    }
+
+    .clear-all {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .clear-all button {
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .todo-list {
+      list-style: none;
+    }
+
+    .todo-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border-radius: 5px;
+      border-left: 5px solid transparent;
+    }
+
+    .todo-item.completed {
+      text-decoration: line-through;
+      background-color: #d3ffd3;
+    }
+
+    .todo-item.overdue {
+      border-left-color: red;
+    }
+
+    .todo-item.low {
+      background-color: #fff3e6;
+    }
+
+    .todo-item.medium {
+      background-color: #fff5b8;
+    }
+
+    .todo-item.high {
+      background-color: #e0f7fa;
+    }
+
+    .buttons button {
+      background-color: #00f5d4;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-left: 5px;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      .input-group { flex-direction: column; }
+      .todo-date, .priority-select { max-width: 100%; }
+    }
+  </style>
 </head>
 <body>
-  <h1>TodoLife</h1>
+
+  <div class="language-selector">
+    <button onclick="setLanguage('fr')">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/2560px-Flag_of_France.svg.png" alt="Français">
+    </button>
+    <button onclick="setLanguage('en')">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/2880px-Flag_of_the_United_Kingdom_%281-2%29.svg.png" alt="English">
+    </button>
+  </div>
+
+  <h1 id="title">ToDoLife</h1>
+
   <div class="todo-container">
     <div class="input-group">
-      <input type="text" id="todoInput" class="todo-input" placeholder="Ajouter une tâche...">
-      <div id="error-message" style="display: none; color: red;">Merci d’écrire une tâche avant de l’ajouter.</div>
-      <input type="date" id="todoDate" class="todo-date">
-      <select id="prioritySelect" class="priority-select">
-        <option value="low">Basse</option>
+      <input type="text" class="todo-input" placeholder="Ajouter une tâche" />
+      <input type="date" class="todo-date" />
+      <select class="priority-select">
+        <option value="low">Faible</option>
         <option value="medium">Moyenne</option>
         <option value="high">Haute</option>
       </select>
     </div>
     <div class="filters">
-      <button onclick="setFilter('all')" id="filter-all" class="active">Toutes</button>
-      <button onclick="setFilter('active')" id="filter-active">À faire</button>
-      <button onclick="setFilter('completed')" id="filter-completed">Complètes</button>
-    </div>
-    <div class="notification-toggle">
-      <label><input type="checkbox" id="notifToggle"> Activer les notifications pour les tâches en retard</label>
+      <button onclick="setFilter('all')" class="active">Toutes</button>
+      <button onclick="setFilter('completed')">Terminées</button>
+      <button onclick="setFilter('overdue')">En retard</button>
+      <button onclick="setFilter('low')">Faible</button>
+      <button onclick="setFilter('medium')">Moyenne</button>
+      <button onclick="setFilter('high')">Haute</button>
     </div>
     <div class="clear-all">
-      <button onclick="clearAllTodos()">Supprimer toutes les tâches</button>
+      <button onclick="clearAllTasks()">Tout supprimer</button>
     </div>
-    <ul id="todoList" class="todo-list"></ul>
+    <ul class="todo-list"></ul>
   </div>
 
   <script>
-    let todos = [];
+    let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     let filter = 'all';
+    let language = 'fr';
 
-    function addTodo() {
-      const todoInput = document.getElementById("todoInput");
-      const todoDate = document.getElementById("todoDate");
-      const prioritySelect = document.getElementById("prioritySelect");
-      const errorMessage = document.getElementById("error-message");
+    const todoList = document.querySelector('.todo-list');
 
-      const task = todoInput.value.trim();
-      const date = todoDate.value;
-      const priority = prioritySelect.value;
-
-      if (!task) {
-        errorMessage.style.display = "block";
-        return;
-      } else {
-        errorMessage.style.display = "none";
-      }
-
-      todos.push({ task, date, priority, completed: false });
-      todoInput.value = "";
-      todoDate.value = "";
-      prioritySelect.value = "low";
-
-      renderTodos();
+    function saveTasks() {
+      localStorage.setItem('tasks', JSON.stringify(tasks));
     }
 
-    function renderTodos() {
-      const todoList = document.getElementById("todoList");
-      todoList.innerHTML = "";
+    function renderTasks() {
+      todoList.innerHTML = '';
+      const now = new Date().toISOString().split('T')[0];
 
-      const filteredTodos = todos.filter(todo => {
-        if (filter === 'all') return true;
-        if (filter === 'active') return !todo.completed;
-        if (filter === 'completed') return todo.completed;
-      });
+      tasks.forEach((task, i) => {
+        if (filter !== 'all' && !taskMatchesFilter(task)) return;
 
-      filteredTodos.forEach((todo, index) => {
-        const li = document.createElement("li");
-        li.className = `todo-item ${todo.completed ? "completed" : ""} ${todo.priority}`;
-
-        const checkbox = document.createElement("input");
-        checkbox.type = "checkbox";
-        checkbox.checked = todo.completed;
-        checkbox.addEventListener("change", () => toggleTodo(index));
-        li.appendChild(checkbox);
-
-        const span = document.createElement("span");
-        span.textContent = `${todo.task} - ${todo.date || "Pas de date"} (${todo.priority})`;
-        li.appendChild(span);
-
-        const deleteBtn = document.createElement("button");
-        deleteBtn.textContent = "Supprimer";
-        deleteBtn.addEventListener("click", () => deleteTodo(index));
-        li.appendChild(deleteBtn);
-
+        const li = document.createElement('li');
+        li.className = `todo-item ${task.priority} ${task.completed ? 'completed' : ''} ${task.date < now && !task.completed ? 'overdue' : ''}`;
+        li.innerHTML = `
+          <span>${task.text} - ${task.date} - ${task.priority}</span>
+          <div class="buttons">
+            <button onclick="toggleComplete(${i})">✓</button>
+            <button onclick="deleteTask(${i})">🗑️</button>
+          </div>
+        `;
         todoList.appendChild(li);
       });
     }
 
-    function toggleTodo(index) {
-      todos[index].completed = !todos[index].completed;
-      renderTodos();
+    function taskMatchesFilter(task) {
+      if (filter === 'completed') return task.completed;
+      if (filter === 'overdue') return !task.completed && task.date < new Date().toISOString().split('T')[0];
+      return task.priority === filter;
     }
 
-    function deleteTodo(index) {
-      todos.splice(index, 1);
-      renderTodos();
+    function addTask() {
+      const text = document.querySelector('.todo-input').value.trim();
+      const date = document.querySelector('.todo-date').value;
+      const priority = document.querySelector('.priority-select').value;
+
+      if (!text || !date) return alert("Veuillez remplir tous les champs.");
+
+      tasks.push({ text, date, priority, completed: false });
+      saveTasks();
+      renderTasks();
+      document.querySelector('.todo-input').value = '';
     }
 
-    function clearAllTodos() {
-      todos = [];
-      renderTodos();
+    function toggleComplete(i) {
+      tasks[i].completed = !tasks[i].completed;
+      saveTasks();
+      renderTasks();
     }
 
-    function setFilter(newFilter) {
-      filter = newFilter;
-      document.querySelectorAll(".filters button").forEach(btn => btn.classList.remove("active"));
-      document.getElementById(`filter-${newFilter}`).classList.add("active");
-      renderTodos();
-    }
-
-    document.getElementById("todoInput").addEventListener("keypress", function(e) {
-      if (e.key === "Enter") addTodo();
-    });
-
-    document.getElementById("notifToggle").addEventListener("change", function() {
-      if (this.checked) {
-        alert("Notifications activées ! (Simulées)");
-      } else {
-        alert("Notifications désactivées.");
+    function deleteTask(i) {
+      if (confirm("Supprimer cette tâche ?")) {
+        tasks.splice(i, 1);
+        saveTasks();
+        renderTasks();
       }
+    }
+
+    function clearAllTasks() {
+      if (confirm("Tout supprimer ?")) {
+        tasks = [];
+        saveTasks();
+        renderTasks();
+      }
+    }
+
+    function setFilter(f) {
+      filter = f;
+      document.querySelectorAll('.filters button').forEach(btn => btn.classList.remove('active'));
+      document.querySelector(`.filters button[onclick="setFilter('${f}')"]`).classList.add('active');
+      renderTasks();
+    }
+
+    function setLanguage(lang) {
+      language = lang;
+      const title = document.getElementById("title");
+      const placeholders = {
+        fr: {
+          title: "ToDoLife",
+          input: "Ajouter une tâche",
+          all: "Toutes", completed: "Terminées", overdue: "En retard",
+          low: "Faible", medium: "Moyenne", high: "Haute",
+          deleteAll: "Tout supprimer"
+        },
+        en: {
+          title: "ToDoLife",
+          input: "Add a task",
+          all: "All", completed: "Completed", overdue: "Overdue",
+          low: "Low", medium: "Medium", high: "High",
+          deleteAll: "Clear all"
+        }
+      };
+
+      title.textContent = placeholders[lang].title;
+      document.querySelector('.todo-input').placeholder = placeholders[lang].input;
+
+      const btns = document.querySelectorAll('.filters button');
+      const keys = ['all', 'completed', 'overdue', 'low', 'medium', 'high'];
+      btns.forEach((btn, i) => btn.textContent = placeholders[lang][keys[i]]);
+      document.querySelector('.clear-all button').textContent = placeholders[lang].deleteAll;
+    }
+
+    // Initialisation
+    document.querySelector('.todo-input').addEventListener('keydown', e => {
+      if (e.key === 'Enter') addTask();
     });
 
-    renderTodos();
+    renderTasks();
   </script>
+
 </body>
 </html>
