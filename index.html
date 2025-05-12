@@ -2,15 +2,19 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
+  <meta name="description" content="Développeur web et app iOS - Découvrez le portfolio de Cameron Adao, créateur de sites performants et intuitifs.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Portfolio - DevWithCam</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
   <link href="style.css" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+  
 </head>
 
 <body>
@@ -18,7 +22,7 @@
   <header>
     <nav>
       <a href="index.html" class="lien-icone">
-        <img src="Logo/DEVWC_45x45.png" alt="Logo DevWithCam" />
+        <img src="Logo/DEVWC_45x45.png" alt="Logo DevWithCam" loading="lazy"/>
       </a>
       <div class="nav-links">
         <a href="index.html" data-key="navAccueil">Accueil</a>
@@ -46,7 +50,7 @@
 
     <!-- Partie droite : Photo -->
     <div class="photo-accueil">
-        <img src="Logo/portrait.PNG" alt="Cameron Adao" style="width: 100%; height: auto; border-radius: 8px;">
+        <img src="Logo/portrait.PNG" alt="Cameron Adao" style="width: 100%; height: auto; border-radius: 8px;" loading="lazy">
     </div>
 </section>
 
@@ -62,7 +66,7 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="ToDoLife.png" class="d-block w-100" alt="Projet ToDoLife">
+        <img src="ToDoLife.png" class="d-block w-100" alt="Projet ToDoLife" loading="lazy">
         <div class="carousel-caption d-none d-md-block">
           <h5 data-key="projet4">ToDoLife</h5>
           <h6 data-key="typeprojet4">Application web de gestion de tâches</h6>
@@ -70,7 +74,7 @@
         </div>
       </div>
       <div class="carousel-item">
-        <img src="ZenFlow.png" class="d-block w-100" alt="Projet ZenFlow">
+        <img src="ZenFlow.png" class="d-block w-100" alt="Projet ZenFlow" loading="lazy">
         <div class="carousel-caption d-none d-md-block">
           <h5 data-key="projet3">ZenFlow</h5>
           <h6 data-key="typeprojet3">Landing page responsive</h6>
@@ -78,7 +82,7 @@
         </div>
       </div>
       <div class="carousel-item">
-        <img src="lecafedecamille.png" class="d-block w-100" alt="Projet Le Café de Camille">
+        <img src="lecafedecamille.png" class="d-block w-100" alt="Projet Le Café de Camille" loading="lazy">
         <div class="carousel-caption d-none d-md-block">
           <h5 data-key="projet2">Le Café de Camille</h5>
           <h6 data-key="typeprojet2">Site vitrine</h6>
@@ -86,7 +90,7 @@
         </div>
       </div>
       <div class="carousel-item">
-        <img src="Capture-decran-2025-04-20-21-07-56.png" class="d-block w-100" alt="Projet OnTourWithCam">
+        <img src="Capture-decran-2025-04-20-21-07-56.png" class="d-block w-100" alt="Projet OnTourWithCam" loading="lazy"> 
         <div class="carousel-caption d-none d-md-block">
           <h5 data-key="projet1">OnTourWithCam</h5>
           <h6 data-key="typeprojet1">Blog personnel</h6>
@@ -94,7 +98,7 @@
         </div>
       </div>
       <div class="carousel-item">
-        <img src="Screenshot-ecommerce.png" class="d-block w-100" alt="Projet ShopWithCam">
+        <img src="Screenshot-ecommerce.png" class="d-block w-100" alt="Projet ShopWithCam" loading="lazy">
         <div class="carousel-caption d-none d-md-block">
           <h5 data-key="projet0">ShopWithCam</h5>
           <h6 data-key="typeprojet0">Boutique e-commerce</h6>
@@ -118,7 +122,7 @@
   <div class="footer-container">
     <div class="footer-logo">
       <a href="index.html">
-      <img src="Logo/DEVWC_300x300.png" alt="Logo DevWithCam"/> <br>© 2025 DevWithCam
+      <img src="Logo/DEVWC_300x300.png" alt="Logo DevWithCam" loading="lazy"/> <br>© 2025 DevWithCam
     </a>
     </div>
     <div class="footer-links">
@@ -133,15 +137,15 @@
     <div class="footer-contact">
       <h3>Contact</h3>
       <ul>
-        <li><a href="https://www.linkedin.com/in/cameron-adao-683b031bb/" target="_blank"><img src="Logo/LinkedIn_icon.svg.png" width="30" height="30"></a></li>
+        <li><a href="https://www.linkedin.com/company/devwithcam/" target="_blank"><img src="Logo/LinkedIn_icon.svg.png" width="30" height="30"></a></li>
         <li><a href="mailto:devwithcam@outlook.com"><img src="Logo/Mail_(iOS).svg.png" width="30" height="30"></a></li>
         <li><a href="https://linktr.ee/devwithcam" target="_blank"><img src="Logo/linktree-2.svg" width="30" height="30"></a></li>
       </ul>
     </div>
     <div class="footer-links">
-      <h3>Données personnelles</h3>
+      <h3 data-key="personal_data">Données personnelles</h3>
       <ul>
-        <li><a href="politique-de-confidentialité.html" data-key="h1title">Politique de Confidentialité</a></li>
+        <li><a href="politique-de-confidentialité.html" data-key="navConfidentialité">Politique de Confidentialité</a></li>
       </ul>
     </div>
   </div>
@@ -155,26 +159,27 @@
       navServices: "Services",
       navApropos: "À Propos",
       navContact: "Contact",
-      privacytitle: "Politique de Confidentialité",
-      privacyintro: "Bienvenue sur notre site. Nous nous engageons à protéger vos informations personnelles. Cette politique de confidentialité explique comment nous collectons, utilisons et protégeons vos données.",
-      dataCollection: "1. Collecte des données personnelles",
-      collect_text: "Nous collectons des informations personnelles lorsque vous vous inscrivez sur notre site, remplissez un formulaire ou effectuez un achat. Ces données peuvent inclure :",
-      Name: "Nom",
-      email: "Adresse email",
-      Autre: "Autres informations pertinentes",
-      dataUsage: "2. Utilisation des données personnelles",
-      usage_text: "Nous utilisons vos données personnelles pour :",
-      traiter: "Traiter vos demandes",
-      Améliorer: "Améliorer nos services",
-      dataProtection: "3. Protection des données",
-      data_protection_text: "Nous prenons des mesures pour protéger vos informations personnelles. Cela inclut l’utilisation de technologies sécurisées et la limitation de l’accès aux données sensibles.",
-      dataSharing: "4. Partage des données",
-      data_sharing_text: "Nous ne partageons pas vos informations personnelles avec des tiers, sauf dans les cas suivants :",
-      data_sharing1: "Pour exécuter nos obligations contractuelles",
-      data_sharing2: "Si la loi nous y oblige",
-      dataRights: "5. Vos droits",
-      data_rights_text: "Vous avez le droit d’accéder, de rectifier, de supprimer ou de limiter l’utilisation de vos données personnelles. Pour exercer ces droits, vous pouvez nous contacter directement.",
-      contact_text: "Si vous avez des questions concernant notre politique de confidentialité ou si vous souhaitez exercer vos droits sur vos données, veuillez nous contacter :",
+      h2title: "Développeur web & app iOS - Full Stack",
+      description: "Je crée des sites web et des applications iOS modernes, fluides et performants pour donner vie à vos idées.",
+      linkservices: "Voir mes services",
+      linkprojects: "Voir mes projets",
+      projet0: "ShopWithCam",
+      projet1: "OnTourWithCam",
+      projet2: "Le Café de Camille",
+      projet3: "ZenFlow",
+      projet4: "ToDoLife",
+      typeprojet0: "Boutique e-commerce",
+      typeprojet1: "Blog personnel",
+      typeprojet2: "Site vitrine",
+      typeprojet3: "Landing page responsive",
+      typeprojet4: "Application web de gestion de tâches",
+      techno_projet0: "Technologies : WordPress, WooCommerce",
+      techno_projet1: "Technologies : WordPress",
+      techno_projet2: "Technologies : HTML5, CSS3",
+      techno_projet3: "Technologies : Figma, HTML/CSS avancé, Bootstrap 5",
+      techno_projet4: "Technologies : HTML5, CSS3, JavaScript (ES6)",
+      personal_data: "Données personnelles",
+      navConfidentialité: "Politique de Confidentialité",
     },
 
     en: {
@@ -184,26 +189,27 @@
       navServices: "Services",
       navApropos: "About",
       navContact: "Contact",
-      privacytitle: "Privacy Policy",
-      privacyintro: "Welcome to our site. We are committed to protecting your personal information. This privacy policy explains how we collect, use, and protect your data.",
-      dataCollection: "1. Collection of personal data",
-      collect_text: "We collect personal information when you register on our site, fill out a form, or make a purchase. This data may include:",
-      Name: "Name",
-      email: "Email address",
-      Autre: "Other relevant information",
-      dataUsage: "2. Use of personal data",
-      usage_text: "We use your personal data to:",
-      traiter: "Process your requests",
-      Améliorer: "Improve our services",
-      dataProtection: "3. Data protection",
-      data_protection_text: "We take measures to protect your personal information. This includes using secure technologies and limiting access to sensitive data.",
-      dataSharing: "4. Data sharing",
-      data_sharing_text: "We do not share your personal information with third parties, except in the following cases:",
-      data_sharing1: "To fulfill our contractual obligations",
-      data_sharing2: "If the law requires us to do so",
-      dataRights: "5. Your rights",
-      data_rights_text: "You have the right to access, rectify, delete, or limit the use of your personal data. To exercise these rights, you can contact us directly.",
-      contact_text: "If you have any questions regarding our privacy policy or if you wish to exercise your rights over your data, please contact us:",
+      h2title: "Web & iOS App Developer - Full Stack",
+      description: "I create modern, fluid, and high-performance websites and iOS applications to bring your ideas to life.",
+      linkservices: "See my services",
+      linkprojects: "See my projects",
+      projet0: "ShopWithCam",
+      projet1: "OnTourWithCam",
+      projet2: "Le Café de Camille",
+      projet3: "ZenFlow",
+      projet4: "ToDoLife",
+      typeprojet0: "E-commerce store",
+      typeprojet1: "Personal blog",
+      typeprojet2: "Showcase site",
+      typeprojet3: "Responsive landing page",
+      typeprojet4: "Task management web application",
+      techno_projet0: "Technologies: WordPress, WooCommerce",
+      techno_projet1: "Technologies: WordPress",
+      techno_projet2: "Technologies: HTML5, CSS3",
+      techno_projet3: "Technologies: Figma, Advanced HTML/CSS, Bootstrap 5",
+      techno_projet4: "Technologies: HTML5, CSS3, JavaScript (ES6)",
+      navConfidentialité: "Privacy Policy",
+      personal_data: "Personal Data",
     }
   };
 
@@ -229,10 +235,13 @@ document.getElementById("lang-switcher").value = lang;
 };
 
 // Event Listener pour changer la langue
-document.getElementById("lang-switcher").addEventListener("change", (e) => {
-const selectedLang = e.target.value;
-switchLang(selectedLang);
+document.getElementById('lang-switcher').addEventListener('change', function () {
+  const selectedLang = this.value;
+  document.querySelectorAll('[data-key]').forEach(el => {
+    el.textContent = translations[selectedLang][el.dataset.key];
+  });
 });
+
 
 // Gestion de la langue au chargement de la page
 document.addEventListener("DOMContentLoaded", () => {
@@ -242,8 +251,10 @@ switchLang(savedLanguage);  // Applique la langue sauvegardée
 } else {
 const userLang = navigator.language.startsWith("en") ? "en" : "fr"; // Définit la langue par défaut en fonction du navigateur
 switchLang(userLang);
+
 }
 });
+
 </script>
 </body>
 

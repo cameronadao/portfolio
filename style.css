@@ -103,6 +103,11 @@ header nav {
   align-items: center;
 }
 
+.index-button:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;
+}
+
 /* === Carousel Section === */
 section {
   padding: 50px 0;
