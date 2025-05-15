@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="description" content="Développeur web et app iOS - Découvrez le portfolio de Cameron Adao, créateur de sites performants et intuitifs.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="1YsbnkA572e2xdgbYlIEpHxtUv6Lt72_sn6YJAMx4PI" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Portfolio - DevWithCam</title>
   <!-- Bootstrap CSS -->
@@ -46,6 +47,10 @@
         <p class="text-intro" data-key="description">Je crée des sites web et des applications iOS modernes, fluides et performants pour donner vie à vos idées.</p>
         <a href="services.html"><button class="index-button" data-key="linkservices">Voir mes services</button></a>
         <a href="projets.html"><button class="index-button" data-key="linkprojects">Voir mes projets</button></a>
+        <a id="brochure-link" href="#" target="_blank" rel="noopener">
+          <button class="index-button" id="brochure-button" data-key="linkbrochure">Voir ma brochure</button>
+        </a>
+        </a>
     </div>
 
     <!-- Partie droite : Photo -->
@@ -180,8 +185,9 @@
       techno_projet4: "Technologies : HTML5, CSS3, JavaScript (ES6)",
       personal_data: "Données personnelles",
       navConfidentialité: "Politique de Confidentialité",
+      linkbrochure: "Voir ma brochure",
     },
-
+  
     en: {
       contactTitle: "Contact - ITWithCam",
       navAccueil: "Home",
@@ -210,51 +216,56 @@
       techno_projet4: "Technologies: HTML5, CSS3, JavaScript (ES6)",
       navConfidentialité: "Privacy Policy",
       personal_data: "Personal Data",
+      linkbrochure: "See my brochure",
     }
   };
 
-  const switchLang = (lang) => {
-// Mise à jour du contenu de la page avec la nouvelle langue
-document.querySelectorAll("[data-key]").forEach(el => {
-const key = el.getAttribute("data-key");
-if (translations[lang] && translations[lang][key]) {
-  el.textContent = translations[lang][key];
-}
-});
+  function applyTranslations(lang) {
+    document.querySelectorAll("[data-key]").forEach(el => {
+      const key = el.getAttribute("data-key");
+      if (translations[lang] && translations[lang][key]) {
+        el.textContent = translations[lang][key];
+      }
+    });
 
-// Mise à jour du titre de la page
-if (translations[lang].contactTitle) {
-document.title = translations[lang].contactTitle;
-}
+    // Mettre à jour le titre de la page
+    if (translations[lang] && translations[lang].contactTitle) {
+      document.title = translations[lang].contactTitle;
+    }
 
-// Sauvegarde de la langue dans localStorage
-localStorage.setItem("preferredLanguage", lang);
+    // ✅ Mettre à jour le lien vers la brochure
+    const brochureLink = document.getElementById("brochure-link");
+    if (brochureLink) {
+      if (lang === "en") {
+        brochureLink.href = "https://devwithcam.netlify.app/brochures/brochure-uk-devwithcam.pdf";
+      } else {
+        brochureLink.href = "https://devwithcam.netlify.app/brochures/brochure-fr-devwithcam.pdf";
+      }
+    }
+  }
 
-// Mise à jour de la sélection dans le menu déroulant
-document.getElementById("lang-switcher").value = lang;
-};
+  function switchLang(lang) {
+    if (!translations[lang]) return;
 
-// Event Listener pour changer la langue
-document.getElementById('lang-switcher').addEventListener('change', function () {
-  const selectedLang = this.value;
-  document.querySelectorAll('[data-key]').forEach(el => {
-    el.textContent = translations[selectedLang][el.dataset.key];
+    localStorage.setItem("selectedLang", lang);
+    applyTranslations(lang);
+
+    const langSwitcher = document.getElementById("lang-switcher");
+    if (langSwitcher) langSwitcher.value = lang;
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const savedLang = localStorage.getItem("selectedLang") || "fr";
+    switchLang(savedLang);
+
+    const langSwitcher = document.getElementById("lang-switcher");
+    if (langSwitcher) {
+      langSwitcher.value = savedLang;
+      langSwitcher.addEventListener("change", (e) => {
+        switchLang(e.target.value);
+      });
+    }
   });
-});
-
-
-// Gestion de la langue au chargement de la page
-document.addEventListener("DOMContentLoaded", () => {
-const savedLanguage = localStorage.getItem("preferredLanguage");
-if (savedLanguage) {
-switchLang(savedLanguage);  // Applique la langue sauvegardée
-} else {
-const userLang = navigator.language.startsWith("en") ? "en" : "fr"; // Définit la langue par défaut en fonction du navigateur
-switchLang(userLang);
-
-}
-});
-
 </script>
 </body>
 

@@ -305,6 +305,16 @@ section {
   margin: 20px;
 }
 
+.service-card h3[data-key]:hover {
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.service-card h3[data-key]:hover {
+  color: #007bff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 /* === Projects Section === */
 .intro-projets {
   text-align: center;
