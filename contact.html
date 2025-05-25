@@ -16,19 +16,26 @@
   <header>
     <nav>
       <a href="index.html" class="lien-icone">
-        <img src="Logo/DEVWC_45x45.png" alt="Logo DevWithCam" />
+        <img src="Logo/DEVWC_45x45.png" alt="Logo DevWithCam" loading="lazy"/>
       </a>
-      <div class="nav-links">
+  
+      <!-- BOUTON MENU POUR MOBILE -->
+      <div class="burger-menu" id="burger-menu">☰</div>
+      
+      
+  
+      <!-- LIENS DE NAVIGATION -->
+      <div class="nav-links" id="nav-links">
         <a href="index.html" data-key="navAccueil">Accueil</a>
         <a href="projets.html" data-key="navProjets">Projets</a>
         <a href="services.html" data-key="navServices">Services</a>
         <a href="a-propos.html" data-key="navApropos">À Propos</a>
         <a href="contact.html" data-key="navContact">Contact</a>
+      </div>
         <select id="lang-switcher">
           <option value="fr" data-icon="🇫🇷">🇫🇷</option>
           <option value="en" data-icon="🇬🇧">🇬🇧</option>
         </select>
-      </div>
     </nav>
   </header>
 
@@ -163,6 +170,13 @@ const userLang = navigator.language.startsWith("en") ? "en" : "fr"; // Définit 
 switchLang(userLang);
 }
 });
+
+const burgerMenu = document.getElementById("burger-menu");
+  const navLinks = document.getElementById("nav-links");
+
+  burgerMenu.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
 </script>
 </body>
 

@@ -25,39 +25,48 @@
       <a href="index.html" class="lien-icone">
         <img src="Logo/DEVWC_45x45.png" alt="Logo DevWithCam" loading="lazy"/>
       </a>
-      <div class="nav-links">
+  
+      <!-- BOUTON MENU POUR MOBILE -->
+      <div class="burger-menu" id="burger-menu">☰</div>
+      
+      
+  
+      <!-- LIENS DE NAVIGATION -->
+      <div class="nav-links" id="nav-links">
         <a href="index.html" data-key="navAccueil">Accueil</a>
         <a href="projets.html" data-key="navProjets">Projets</a>
         <a href="services.html" data-key="navServices">Services</a>
         <a href="a-propos.html" data-key="navApropos">À Propos</a>
         <a href="contact.html" data-key="navContact">Contact</a>
+      </div>
         <select id="lang-switcher">
           <option value="fr" data-icon="🇫🇷">🇫🇷</option>
           <option value="en" data-icon="🇬🇧">🇬🇧</option>
         </select>
-      </div>
     </nav>
   </header>
 
 <section class="index-content">
     <!-- Partie gauche : Titre et Paragraphe -->
-    <div class="text-content">
+    <div class="index-text-content">
         <h1 data-key="h1name">Cameron Adao</h1>
         <h2 data-key="h2title">Développeur web & app iOS - Full Stack</h2>
         <p class="text-intro" data-key="description">Je crée des sites web et des applications iOS modernes, fluides et performants pour donner vie à vos idées.</p>
-        <a href="services.html"><button class="index-button" data-key="linkservices">Voir mes services</button></a>
-        <a href="projets.html"><button class="index-button" data-key="linkprojects">Voir mes projets</button></a>
-        <a id="brochure-link" href="#" target="_blank" rel="noopener">
-          <button class="index-button" id="brochure-button" data-key="linkbrochure">Voir ma brochure</button>
-        </a>
         </a>
     </div>
 
     <!-- Partie droite : Photo -->
     <div class="photo-accueil">
-        <img src="Logo/portrait.PNG" alt="Cameron Adao" style="width: 100%; height: auto; border-radius: 8px;" loading="lazy">
+        <img src="Logo/portrait.jpeg" alt="Cameron Adao" style="width: 100%; height: auto; border-radius: 8px;" loading="lazy">
     </div>
 </section>
+
+<section class="index-buttons">
+  <a href="services.html"><button class="index-button" data-key="linkservices">Services</button></a>
+  <a href="projets.html"><button class="index-button" data-key="linkprojects">Projets</button></a>
+  <a id="brochure-link" href="#" target="_blank" rel="noopener">
+  <button class="index-button" id="brochure-button" data-key="linkbrochure">Brochure</button></a>
+  </section>
 
   <!-- Carrousel -->
 <section class="carousel">
@@ -123,11 +132,11 @@
 </section>
 
  <!--Pied-de-page-->
-<footer>
+ <footer>
   <div class="footer-container">
     <div class="footer-logo">
       <a href="index.html">
-      <img src="Logo/DEVWC_300x300.png" alt="Logo DevWithCam" loading="lazy"/> <br>© 2025 DevWithCam
+      <img src="Logo/DEVWC_300x300.png" alt="Logo DevWithCam"/> <br>© 2025 DevWithCam
     </a>
     </div>
     <div class="footer-links">
@@ -147,10 +156,10 @@
         <li><a href="https://linktr.ee/devwithcam" target="_blank"><img src="Logo/linktree-2.svg" width="30" height="30"></a></li>
       </ul>
     </div>
-    <div class="footer-links">
+    <div class="footer-data">
       <h3 data-key="personal_data">Données personnelles</h3>
       <ul>
-        <li><a href="politique-de-confidentialité.html" data-key="navConfidentialité">Politique de Confidentialité</a></li>
+        <li><a href="politique-de-confidentialité.html" data-key="h1title">Politique de Confidentialité</a></li>
       </ul>
     </div>
   </div>
@@ -166,8 +175,8 @@
       navContact: "Contact",
       h2title: "Développeur web & app iOS - Full Stack",
       description: "Je crée des sites web et des applications iOS modernes, fluides et performants pour donner vie à vos idées.",
-      linkservices: "Voir mes services",
-      linkprojects: "Voir mes projets",
+      linkservices: "Services",
+      linkprojects: "Projets",
       projet0: "ShopWithCam",
       projet1: "OnTourWithCam",
       projet2: "Le Café de Camille",
@@ -185,7 +194,7 @@
       techno_projet4: "Technologies : HTML5, CSS3, JavaScript (ES6)",
       personal_data: "Données personnelles",
       navConfidentialité: "Politique de Confidentialité",
-      linkbrochure: "Voir ma brochure",
+      linkbrochure: "Brochure",
     },
   
     en: {
@@ -197,8 +206,8 @@
       navContact: "Contact",
       h2title: "Web & iOS App Developer - Full Stack",
       description: "I create modern, fluid, and high-performance websites and iOS applications to bring your ideas to life.",
-      linkservices: "See my services",
-      linkprojects: "See my projects",
+      linkservices: "Services",
+      linkprojects: "Projects",
       projet0: "ShopWithCam",
       projet1: "OnTourWithCam",
       projet2: "Le Café de Camille",
@@ -216,7 +225,7 @@
       techno_projet4: "Technologies: HTML5, CSS3, JavaScript (ES6)",
       navConfidentialité: "Privacy Policy",
       personal_data: "Personal Data",
-      linkbrochure: "See my brochure",
+      linkbrochure: "Brochure",
     }
   };
 
@@ -265,6 +274,13 @@
         switchLang(e.target.value);
       });
     }
+  });
+
+  const burgerMenu = document.getElementById("burger-menu");
+  const navLinks = document.getElementById("nav-links");
+
+  burgerMenu.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
   });
 </script>
 </body>

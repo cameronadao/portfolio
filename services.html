@@ -16,19 +16,26 @@
   <header>
     <nav>
       <a href="index.html" class="lien-icone">
-        <img src="Logo/DEVWC_45x45.png" alt="Logo DevWithCam" />
+        <img src="Logo/DEVWC_45x45.png" alt="Logo DevWithCam" loading="lazy"/>
       </a>
-      <div class="nav-links">
+  
+      <!-- BOUTON MENU POUR MOBILE -->
+      <div class="burger-menu" id="burger-menu">☰</div>
+      
+      
+  
+      <!-- LIENS DE NAVIGATION -->
+      <div class="nav-links" id="nav-links">
         <a href="index.html" data-key="navAccueil">Accueil</a>
         <a href="projets.html" data-key="navProjets">Projets</a>
         <a href="services.html" data-key="navServices">Services</a>
         <a href="a-propos.html" data-key="navApropos">À Propos</a>
         <a href="contact.html" data-key="navContact">Contact</a>
-        <select id="lang-switcher">
-          <option value="fr">🇫🇷</option>
-          <option value="en">🇬🇧</option>
-        </select>
       </div>
+        <select id="lang-switcher">
+          <option value="fr" data-icon="🇫🇷">🇫🇷</option>
+          <option value="en" data-icon="🇬🇧">🇬🇧</option>
+        </select>
     </nav>
   </header>
 
@@ -36,43 +43,43 @@
   <main>
     <section class="intro-services">
       <h1 data-key="services">SERVICES</h1>
-      <p data-key="description">De l’idée à la mise en ligne, je vous accompagne dans chaque étape de votre projet digital. Sites web, applis iOS, design UX/UI ou WordPress : je suis là pour concrétiser votre vision.</p>
+      <p data-key="description">De l’idée à la mise en ligne, je vous accompagne à chaque étape de votre projet digital. Sites web, applications iOS, design UX/UI ou WordPress : ensemble, nous donnons vie à votre vision avec efficacité et créativité.</p>
     </section>
 
     <section class="services-grid">
       <div class="service-card">
         <h3 data-key="service1">🌐 Création de sites web modernes</h3>
-        <p class="service-p" data-key="infoservice1">Des sites responsives, rapides et bien référencés, adaptés à tous les écrans.</p>
+        <p class="service-p" data-key="infoservice1">Des sites rapides, responsives et optimisés SEO, conçus pour offrir une expérience fluide sur tous vos écrans</p>
         <p class="service-p" data-key="techservice1"><strong>(HTML, CSS, Bootstrap, JavaScript, React)</strong></p>
       </div>
 
       <div class="service-card">
         <h3 data-key="service2">📱 Applications iOS</h3>
-        <p class="service-p" data-key="infoservice2">Des applications iPhone/iPad performantes connectées à vos outils, fluides et rapides.</p>
+        <p class="service-p" data-key="infoservice2">Des applications iPhone et iPad performantes, intuitives et parfaitement intégrées à vos systèmes pour booster votre activité.</p>
         <p class="service-p" data-key="techservice2"><strong>(Swift, SwiftUI, UIKit, REST APIs, Xcode)</strong></p>
       </div>
 
       <div class="service-card">
         <h3 data-key="service6">🤖 IA & Automatisation</h3>
-        <p class="service-p" data-key="infoservice6">Des outils intelligents et des automatisations pour gagner du temps au quotidien.</p>
+        <p class="service-p" data-key="infoservice6">Des solutions intelligentes et automatisées qui simplifient vos tâches et maximisent votre productivité au quotidien.</p>
         <p class="service-p" data-key="techservice6"><strong>(Python, OpenAI API, Zapier, LangChain, Scikit-learn)</strong></p>
       </div>
 
       <div class="service-card">
         <h3 data-key="service4">🎨 UX/UI Design</h3>
-        <p class="service-p" data-key="infoservice4">Des interfaces claires et agréables, pensées pour vos utilisateurs.</p>
+        <p class="service-p" data-key="infoservice4">Des interfaces intuitives et attractives, conçues pour offrir à vos utilisateurs une expérience fluide et mémorable.</p>
         <p class="service-p" data-key="techservice4"><strong>(Figma, Test utilisateurs, Prototypage)</strong></p>
       </div>
 
       <div class="service-card">
         <h3 data-key="service5">🛠️ Sites WordPress personnalisés</h3>
-        <p class="service-p" data-key="infoservice5">Des sites faciles à gérer avec WordPress (vitrine, blog, e-commerce).</p>
-        <p class="service-p" data-key="techservice5"><strong>(WordPress, Elementor, WooCommerce, Plugins, Thèmes personnalisés)</strong></p>
+        <p class="service-p" data-key="infoservice5">Des sites performants, faciles à gérer, adaptés à vos besoins : vitrine, blog ou e-commerce.</p>
+        <p class="service-p" data-key="techservice5"><strong>(Shopify, WordPress, Elementor, WooCommerce, Plugins, Thèmes personnalisés)</strong></p>
       </div>
 
       <div class="service-card">
         <h3 data-key="service3">⚙️ Solutions techniques sur-mesure</h3>
-        <p class="service-p" data-key="infoservice3">Des solutions techniques complètes : API, espace client, tableau de bord, etc.</p>
+        <p class="service-p" data-key="infoservice3">Des solutions complètes et robustes : API, espace client, tableaux de bord, pour optimiser votre gestion et vos services.</p>
         <p class="service-p" data-key="techservice3"><strong>(Node.js, Express, MongoDB, Git, REST API)</strong></p>
       </div>
     </section>
@@ -138,12 +145,12 @@
         contactTitle: "Services - DevWithCam",
         navAccueil: "Accueil", navProjets: "Projets", navServices: "Services", navApropos: "À Propos", navContact: "Contact",
         services: "SERVICES",
-        description: "De l’idée à la mise en ligne, je vous accompagne dans chaque étape de votre projet digital. Sites web, applis iOS, design UX/UI ou WordPress : je suis là pour concrétiser votre vision.",
-        service1: "🌐 Création de sites web modernes", infoservice1: "Des sites responsives, rapides et bien référencés, adaptés à tous les écrans.", techservice1: "(HTML, CSS, Bootstrap, JavaScript, React)",
-        service2: "📱 Applications iOS", infoservice2: "Des applications iPhone/iPad performantes connectées à vos outils, fluides et rapides.", techservice2: "(Swift, SwiftUI, UIKit, REST APIs, Xcode)",
-        service3: "⚙️ Solutions techniques sur-mesure", infoservice3: "Des solutions techniques complètes : API, espace client, tableau de bord, etc.", techservice3: "(Node.js, Express, MongoDB, Git, REST API)",
-        service4: "🎨 UX/UI Design", infoservice4: "Des interfaces claires et agréables, pensées pour vos utilisateurs.", techservice4: "(Figma, Test utilisateurs, Prototypage)",
-        service5: "🛠️ Sites WordPress personnalisés", infoservice5: "Des sites faciles à gérer avec WordPress (vitrine, blog, e-commerce).", techservice5: "(WordPress, Elementor, WooCommerce, Plugins, Thèmes personnalisés)",
+        description: "De l’idée à la mise en ligne, je vous accompagne à chaque étape de votre projet digital. Sites web, applications iOS, design UX/UI ou WordPress : ensemble, nous donnons vie à votre vision avec efficacité et créativité. ",
+        service1: "🌐 Création de sites web modernes", infoservice1: "Des sites rapides, responsives et optimisés SEO, conçus pour offrir une expérience fluide sur tous vos écrans.", techservice1: "(HTML, CSS, Bootstrap, JavaScript, React)",
+        service2: "📱 Applications iOS", infoservice2: "Des applications iPhone et iPad performantes, intuitives et parfaitement intégrées à vos systèmes pour booster votre activité.", techservice2: "(Swift, SwiftUI, UIKit, REST APIs, Xcode)",
+        service3: "⚙️ Solutions techniques sur-mesure", infoservice3: "Des solutions complètes et robustes : API, espace client, tableaux de bord, pour optimiser votre gestion et vos services.", techservice3: "(Node.js, Express, MongoDB, Git, REST API)",
+        service4: "🎨 UX/UI Design", infoservice4: "Des interfaces intuitives et attractives, conçues pour offrir à vos utilisateurs une expérience fluide et mémorable.", techservice4: "(Figma, Test utilisateurs, Prototypage)",
+        service5: "🛠️ Sites WordPress personnalisés", infoservice5: "Des sites performants, faciles à gérer, adaptés à vos besoins : vitrine, blog ou e-commerce.", techservice5: "(WordPress, Elementor, WooCommerce, Plugins, Thèmes personnalisés)",
         service6: "🤖 IA & Automatisation", infoservice6: "Des outils intelligents et des automatisations pour gagner du temps au quotidien.", techservice6: "(Python, OpenAI API, Zapier, LangChain, Scikit-learn)",
         projettext: "Parlons de votre projet",
         labelNom: "Nom", labelEmail: "Email", labelTel: "Téléphone", labelMessage: "Message", yourproject: "Décrivez votre besoin...", btnEnvoyer: "Envoyer",
@@ -153,13 +160,13 @@
         contactTitle: "Services - DevWithCam",
         navAccueil: "Home", navProjets: "Projects", navServices: "Services", navApropos: "About", navContact: "Contact",
         services: "SERVICES",
-        description: "From idea to launch, I support you in every step of your digital project. Websites, iOS apps, UX/UI design or WordPress: I'm here to bring your vision to life.",
-        service1: "🌐 Creation of modern websites", infoservice1: "Responsive, fast and well-referenced sites, adapted to all screens.", techservice1: "(HTML, CSS, Bootstrap, JavaScript, React)",
-        service2: "📱 iOS Applications", infoservice2: "High-performance iPhone/iPad applications connected to your tools, fluid and fast.", techservice2: "(Swift, SwiftUI, UIKit, REST APIs, Xcode)",
-        service3: "⚙️ Custom technical solutions", infoservice3: "Complete technical solutions: API, client area, dashboard, etc.", techservice3: "(Node.js, Express, MongoDB, Git, REST API)",
-        service4: "🎨 UX/UI Design", infoservice4: "Clear and pleasant interfaces, designed for your users.", techservice4: "(Figma, User testing, Prototyping)",
-        service5: "🛠️ Custom WordPress sites", infoservice5: "Easy-to-manage sites with WordPress (showcase, blog, e-commerce).", techservice5: "(WordPress, Elementor, WooCommerce, Plugins, Custom themes)",
-        service6: "🤖 AI & Automation", infoservice6: "Smart tools and automations to save time daily.", techservice6: "(Python, OpenAI API, Zapier, LangChain, Scikit-learn)",
+        description: "From idea to launch, I support you at every stage of your digital project. Websites, iOS applications, UX/UI design or WordPress: together, we bring your vision to life with efficiency and creativity.",
+        service1: "🌐 Creation of modern websites", infoservice1:"Fast, responsive and SEO-optimized sites designed to provide a smooth experience on all your screens." , techservice1: "(HTML, CSS, Bootstrap, JavaScript, React)",
+        service2: "📱 iOS Applications", infoservice2: "High-performance, intuitive iPhone and iPad applications perfectly integrated into your systems to boost your business.", techservice2: "(Swift, SwiftUI, UIKit, REST APIs, Xcode)",
+        service3: "⚙️ Custom technical solutions", infoservice3: "Complete and robust solutions: API, client area, dashboards, to optimize your management and services.", techservice3: "(Node.js, Express, MongoDB, Git, REST API)",
+        service4: "🎨 UX/UI Design", infoservice4: "Intuitive and attractive interfaces designed to provide your users with a smooth and memorable experience.", techservice4: "(Figma, User testing, Prototyping)",
+        service5: "🛠️ Custom WordPress sites", infoservice5: "High-performance, easy-to-manage sites tailored to your needs: showcase, blog or e-commerce.", techservice5: "(WordPress, Elementor, WooCommerce, Plugins, Custom themes)",
+        service6: "🤖 AI & Automation", infoservice6: "Intelligent tools and automations to save time in your daily life.", techservice6: "(Python, OpenAI API, Zapier, LangChain, Scikit-learn)",
         projettext: "Let's talk about your project",
         labelNom: "Name", labelEmail: "Email", labelTel: "Phone", labelMessage: "Message", yourproject: "Describe your need...", btnEnvoyer: "Send",
         personal_data: "Personal data", h1title: "Privacy Policy"
@@ -172,11 +179,17 @@
         web: "https://devwithcam.netlify.app/brochures/brochure-fr-devwithcam-website.pdf",
         ios: "https://devwithcam.netlify.app/brochures/brochure-fr-devwithcam-ios.pdf",
         ai: "https://devwithcam.netlify.app/brochures/brochure-fr-devwithcam-automation.pdf",
+        tech: "https://devwithcam.netlify.app/brochures/brochure-fr-devwithcam-tech.pdf",
+        uxui: "https://devwithcam.netlify.app/brochures/brochure-fr-devwithcam-ux-ui.pdf",
+        ecom: "https://devwithcam.netlify.app/brochures/brochure-fr-devwithcam-ecommerce.pdf"
       },
       en: {
         web: "https://devwithcam.netlify.app/brochures/brochure-uk-devwithcam-website.pdf",
         ios: "https://devwithcam.netlify.app/brochures/brochure-uk-devwithcam-ios.pdf",
         ai: "https://devwithcam.netlify.app/brochures/brochure-uk-devwithcam-automation.pdf",
+        tech: "https://devwithcam.netlify.app/brochures/brochure-uk-devwithcam-tech.pdf",
+        uxui: "https://devwithcam.netlify.app/brochures/brochure-uk-devwithcam-ux-ui.pdf",
+        ecom: "https://devwithcam.netlify.app/brochures/brochure-uk-devwithcam-ecommerce.pdf"
       }
     };
   
@@ -215,6 +228,9 @@
       const clickableServices = [
         { key: "service1", brochureKey: "web" },
         { key: "service2", brochureKey: "ios" },
+        { key: "service3", brochureKey: "tech" },
+        { key: "service4", brochureKey: "uxui" },
+        { key: "service5", brochureKey: "ecom" },
         { key: "service6", brochureKey: "ai" }
       ];
   
@@ -233,6 +249,12 @@
         }
       });
     });
+    const burgerMenu = document.getElementById("burger-menu");
+  const navLinks = document.getElementById("nav-links");
+
+  burgerMenu.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
   </script>
 </body>
 </html>

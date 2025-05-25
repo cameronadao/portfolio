@@ -16,31 +16,40 @@
   <header>
     <nav>
       <a href="index.html" class="lien-icone">
-        <img src="Logo/DEVWC_45x45.png" alt="Logo DevWithCam" />
+        <img src="Logo/DEVWC_45x45.png" alt="Logo DevWithCam" loading="lazy"/>
       </a>
-      <div class="nav-links">
+  
+      <!-- BOUTON MENU POUR MOBILE -->
+      <div class="burger-menu" id="burger-menu">☰</div>
+      
+      
+  
+      <!-- LIENS DE NAVIGATION -->
+      <div class="nav-links" id="nav-links">
         <a href="index.html" data-key="navAccueil">Accueil</a>
         <a href="projets.html" data-key="navProjets">Projets</a>
         <a href="services.html" data-key="navServices">Services</a>
         <a href="a-propos.html" data-key="navApropos">À Propos</a>
         <a href="contact.html" data-key="navContact">Contact</a>
+      </div>
         <select id="lang-switcher">
           <option value="fr" data-icon="🇫🇷">🇫🇷</option>
           <option value="en" data-icon="🇬🇧">🇬🇧</option>
         </select>
-      </div>
     </nav>
   </header>
 <!--Contenu principal-->
   <main>
     <section class="intro-projets">
       <h1 data-key="projets">PROJETS</h1>
-      <p data-key="description">Voici une sélection de mes projets réalisés, allant des sites web aux applications mobiles, en passant par des tableaux de bord et des systèmes de gestion. Chaque projet reflète mes compétences en développement et en design.</p>
+      <p data-key="description">Découvrez une sélection de mes réalisations : sites web, applications mobiles, tableaux de bord et systèmes de gestion. 
+        Chaque projet est conçu avec soin pour allier performance, design et ergonomie, et reflète mon savoir-faire technique et créatif au service 
+        de vos besoins.</p>
     </section>
 
     <section class="projects-grid">
       <div class="project-card">
-        <img src="Capture-decran-2025-04-20-21-07-56.png" alt="Le Café de Camille" width="300" height="200" />
+        <img src="Capture-decran-2025-04-20-21-07-56.jpeg" alt="Le Café de Camille" width="300" height="200" />
         <h3 data-key="projet1">OnTourWithCam</h3>
           <h4 data-key="typeprojet1">Blog Personnel</h4>
         <p data-key="techno-projet1">Technologies : WordPress</p>
@@ -48,7 +57,7 @@
       </div>
 
       <div class="project-card">
-        <img src="lecafedecamille.png" alt="Le Café de Camille" width="300" height="200" />
+        <img src="lecafedecamille.jpeg" alt="Le Café de Camille" width="300" height="200" />
         <h3 data-key="projet2">Le Café de Camille</h3>
         <h4 data-key="typeprojet2">Site vitrine</h4>
         <p data-key="techno-projet2">Technologies : HTML5 + CSS3</p>
@@ -56,7 +65,7 @@
       </div>
 
       <div class="project-card">
-        <img src="ZenFlow.png" alt="Dashboard React" width="300" height="200" />
+        <img src="ZenFlow.jpeg" alt="Dashboard React" width="300" height="200" />
         <h3 data-key="projet3">ZenFlow</h3>
         <h4 data-key="typeprojet3">Landing page responsive</h4>
         <p data-key="techno-projet4">Technologies : Figma + HTML/CSS avancé + Bootstrap 5</p>
@@ -64,7 +73,7 @@
       </div>
 
       <div class="project-card">
-        <img src="ToDoLife.png" alt="Appli web de gestion de tâches" width="300" height="200" />
+        <img src="ToDoLife.jpeg" alt="Appli web de gestion de tâches" width="300" height="200" />
         <h3 data-key="projet4">TodoLife</h3>
         <h4 data-key="typeprojet4">Appli web de gestion de tâches</h4>
         <p data-key="techno-projet4">Technologies : HTML5 + CSS3 + JavaScript (ES6)</p>
@@ -155,7 +164,7 @@
       navApropos: "À Propos",
       navContact: "Contact",
       projets: "PROJETS",
-      description: "Voici une sélection de mes projets réalisés, allant des sites web aux applications mobiles, en passant par des tableaux de bord et des systèmes de gestion. Chaque projet reflète mes compétences en développement et en design.",
+      description: "Découvrez une sélection de mes réalisations : sites web, applications mobiles, tableaux de bord et systèmes de gestion. Chaque projet est conçu avec soin pour allier performance, design et ergonomie, et reflète mon savoir-faire technique et créatif au service de vos besoins.",
       projet1: "OnTourWithCam",
       projet2: "Le Café de Camille",
       projet3: "ZenFlow",
@@ -261,6 +270,13 @@ const userLang = navigator.language.startsWith("en") ? "en" : "fr"; // Définit 
 switchLang(userLang);
 }
 });
+
+const burgerMenu = document.getElementById("burger-menu");
+  const navLinks = document.getElementById("nav-links");
+
+  burgerMenu.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
 </script>
 </body>
 

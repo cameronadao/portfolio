@@ -19,22 +19,29 @@
   <header>
     <nav>
       <a href="index.html" class="lien-icone">
-        <img src="Logo/DEVWC_45x45.png" alt="Logo DevWithCam" />
+        <img src="Logo/DEVWC_45x45.png" alt="Logo DevWithCam" loading="lazy"/>
       </a>
-      <div class="nav-links">
+  
+      <!-- BOUTON MENU POUR MOBILE -->
+      <div class="burger-menu" id="burger-menu">☰</div>
+      
+      
+  
+      <!-- LIENS DE NAVIGATION -->
+      <div class="nav-links" id="nav-links">
         <a href="index.html" data-key="navAccueil">Accueil</a>
         <a href="projets.html" data-key="navProjets">Projets</a>
         <a href="services.html" data-key="navServices">Services</a>
         <a href="a-propos.html" data-key="navApropos">À Propos</a>
         <a href="contact.html" data-key="navContact">Contact</a>
+      </div>
         <select id="lang-switcher">
           <option value="fr" data-icon="🇫🇷">🇫🇷</option>
           <option value="en" data-icon="🇬🇧">🇬🇧</option>
         </select>
-      </div>
     </nav>
   </header>
-<section class="about">
+  <section class="about">
     <div class="about-content">
         <!-- Partie gauche : Titre et Paragraphe -->
         <div class="text-content">
@@ -112,8 +119,10 @@
       navApropos: "À Propos",
       navContact: "Contact",
       h1: "À PROPOS",
-      h2: "Ce que je fais ?",
-      p: "Moi c’est Cameron — développeur web & mobile iOS. Après plusieurs années dans le business development, j’ai décidé de faire un virage vers le code pour mettre la tech au service des entrepreneurs, startups et créatifs. Formé en développement full stack, design UI/UX et automatisation, je conçois des sites web modernes, des apps iOS et des outils sur-mesure, pensés pour la performance, l’efficacité et l’expérience utilisateur. Mon objectif : créer des solutions simples, utiles, bien codées. Développons quelque chose d’unique.",
+      h2_goals: "Mon objectif ?",
+      p_goals: "Transformer vos idées en solutions simples, robustes et impactantes. Construisons ensemble quelque chose d’unique.",
+      h2: "Mes expertises :",
+      p: "Je suis Cameron, développeur web et mobile iOS passionné par la technologie au service des entrepreneurs, startups et créatifs. Après plusieurs années en business development, j’ai choisi de me consacrer pleinement au développement pour concevoir des solutions digitales performantes, intuitives et sur-mesure. Formé en développement full stack, design UI/UX et automatisation, je crée des sites web modernes, des applications iOS et des outils personnalisés, toujours pensés pour maximiser l’efficacité et offrir une expérience utilisateur optimale. Développons quelque chose d’unique.",
       li1: "Des sites vitrines responsives (HTML, CSS, JS, Bootstrap)",
       li2: "Des apps web modernes avec React & Node.js",
       li3: "Des apps iOS natives avec Swift",
@@ -130,8 +139,10 @@
       navApropos: "About",
       navContact: "Contact",
       h1: "ABOUT",
-      h2: "What I do?",
-      p: "I’m Cameron — web & iOS mobile developer. After several years in business development, I decided to make a shift towards coding to put tech at the service of entrepreneurs, startups and creatives. Trained in full stack development, UI/UX design and automation, I design modern websites, iOS apps and tailor-made tools, designed for performance, efficiency and user experience. My goal: to create simple, useful, well-coded solutions. Let’s develop something unique.",
+      h2_goals: "My goal?",
+      p_goals: "Transform your ideas into simple, robust, and impactful solutions. Let's build something unique together.",
+      h2: "My expertise:",
+      p: "I am Cameron, a web and iOS mobile developer passionate about technology for entrepreneurs, startups, and creatives. After several years in business development, I chose to fully dedicate myself to development to design efficient, intuitive, and tailor-made digital solutions. Trained in full stack development, UI/UX design, and automation, I create modern websites, iOS applications, and custom tools, always designed to maximize efficiency and provide an optimal user experience. Let's develop something unique.",
       li1: "Responsive showcase sites (HTML, CSS, JS, Bootstrap)",
       li2: "Modern web apps with React & Node.js",
       li3: "Native iOS apps with Swift",
@@ -178,6 +189,13 @@ const userLang = navigator.language.startsWith("en") ? "en" : "fr"; // Définit 
 switchLang(userLang);
 }
 });
+
+const burgerMenu = document.getElementById("burger-menu");
+  const navLinks = document.getElementById("nav-links");
+
+  burgerMenu.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
 </script>
 </body>
 
