@@ -517,6 +517,8 @@ form.contact-form {
   background-color: #0056b3;
 }
 
+/* === Changement de la langue === */
+
 .lang-switch {
   display: inline-block;
   margin-left: 15px;
@@ -596,7 +598,6 @@ form.contact-form {
   color: #aaa;
 }
 
-/* Section d'introduction */
 .privacy-intro {
   text-align: center;
   max-width: 900px;
@@ -609,7 +610,6 @@ form.contact-form {
   color: #ddd;
 }
 
-/* Liste des informations */
 .privacy-list {
   margin: 20px 0;
 }
@@ -620,7 +620,6 @@ form.contact-form {
   color: #ddd;
 }
 
-/* Section des droits et des contacts */
 .privacy-rights {
   margin-top: 40px;
 }
@@ -639,7 +638,7 @@ form.contact-form {
   margin-bottom: 30px;
 }
 
-/* Footer */
+/* === Footer === */
 footer.privacy-footer {
   background-color: #1c1c1c;
   color: #ccc;
@@ -653,7 +652,6 @@ footer.privacy-footer p {
   margin: 10px 0;
 }
 
-/* === Footer === */
 footer {
   background-color: #2e2e2e;
   color: white;
