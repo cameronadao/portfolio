@@ -301,17 +301,6 @@ section {
   opacity: 0;
 }
 
-@keyframes fadeInUp {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
 .service-card {
   background-color: #1c1c1c;
   padding: 40px 30px;
@@ -355,6 +344,19 @@ section {
   color: #007bff;
   text-decoration: underline;
   cursor: pointer;
+}
+
+/* === Animations === */
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* === Projects Section === */
