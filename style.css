@@ -683,7 +683,7 @@ footer ul li a:hover {
 }
 
 .footer-contact li,
-.footer-links li {
+.footer-links li, .footer-data li {
   margin-left: 0px;
   padding-left: 0;
   margin-bottom: 10px;
@@ -714,7 +714,6 @@ footer ul li a:hover {
     flex: 1;
     max-width: 25%;
   }
-}
 
 .footer-data h3,
   .footer-data li {
@@ -722,6 +721,19 @@ footer ul li a:hover {
     overflow: hidden;
     text-overflow: ellipsis;;
   }
+
+  .photo {
+    text-align: center; /* centre l’image dans le container */
+  }
+  
+  .photo img {
+    max-width: 400px; /* ou la taille que tu veux */
+    width: 100%;
+    height: auto;
+    display: inline-block; /* pour que text-align fonctionne */
+    margin-left: 150%;
+  }
+}
 
 
 @media screen and (max-width: 1024px) {
@@ -783,6 +795,19 @@ footer ul li a:hover {
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .photo {
+    text-align: center; /* centre l’image dans le container */
+  }
+  
+  .photo img {
+    max-width: 400px; /* ou la taille que tu veux */
+    width: 100%;
+    height: auto;
+    display: inline-block; /* pour que text-align fonctionne */
+    margin-left: 100%;
+  }
+  
 }
 
 @media (max-width: 1023px) {
@@ -831,6 +856,7 @@ footer ul li a:hover {
   .text-content {
     margin-bottom: 30px;
   }
+
 }
 
 

@@ -165,6 +165,18 @@
   </div>
 </footer>
 <script>
+
+  // Récupère la langue du navigateur (ex : "en-US", "fr-FR")
+  const userLang = navigator.language || navigator.userLanguage;
+  // On extrait uniquement la langue (ex : "en", "fr")
+  const lang = userLang.slice(0, 2).toLowerCase();
+
+  // Si la langue détectée est supportée, on l’utilise. Sinon, on met "fr" par défaut
+  const defaultLang = (lang === "en" || lang === "fr") ? lang : "fr";
+
+  // On applique la langue détectée automatiquement
+  document.documentElement.lang = defaultLang;
+
   const translations = {
     fr: {
       contactTitle: "Contact - ITWithCam",
