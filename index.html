@@ -273,54 +273,45 @@
     }
   };
 
-  function applyTranslations(lang) {
-    document.querySelectorAll("[data-key]").forEach(el => {
-      const key = el.getAttribute("data-key");
-      if (translations[lang] && translations[lang][key]) {
-        el.textContent = translations[lang][key];
-      }
-    });
+  const switchLang = (lang) => {
+// Mise à jour du contenu de la page avec la nouvelle langue
+document.querySelectorAll("[data-key]").forEach(el => {
+const key = el.getAttribute("data-key");
+if (translations[lang] && translations[lang][key]) {
+  el.textContent = translations[lang][key];
+}
+});
 
-    // Mettre à jour le titre de la page
-    if (translations[lang] && translations[lang].contactTitle) {
-      document.title = translations[lang].contactTitle;
-    }
+// Mise à jour du titre de la page
+if (translations[lang].contactTitle) {
+document.title = translations[lang].contactTitle;
+}
 
-    // ✅ Mettre à jour le lien vers la brochure
-    const brochureLink = document.getElementById("brochure-link");
-    if (brochureLink) {
-      if (lang === "en") {
-        brochureLink.href = "https://devwithcam.netlify.app/brochures/brochure-uk-devwithcam.pdf";
-      } else {
-        brochureLink.href = "https://devwithcam.netlify.app/brochures/brochure-fr-devwithcam.pdf";
-      }
-    }
-  }
+// Sauvegarde de la langue dans localStorage
+localStorage.setItem("preferredLanguage", lang);
 
-  function switchLang(lang) {
-    if (!translations[lang]) return;
+// Mise à jour de la sélection dans le menu déroulant
+document.getElementById("lang-switcher").value = lang;
+};
 
-    localStorage.setItem("selectedLang", lang);
-    applyTranslations(lang);
+// Event Listener pour changer la langue
+document.getElementById("lang-switcher").addEventListener("change", (e) => {
+const selectedLang = e.target.value;
+switchLang(selectedLang);
+});
 
-    const langSwitcher = document.getElementById("lang-switcher");
-    if (langSwitcher) langSwitcher.value = lang;
-  }
+// Gestion de la langue au chargement de la page
+document.addEventListener("DOMContentLoaded", () => {
+const savedLanguage = localStorage.getItem("preferredLanguage");
+if (savedLanguage) {
+switchLang(savedLanguage);  // Applique la langue sauvegardée
+} else {
+const userLang = navigator.language.startsWith("en") ? "en" : "fr"; // Définit la langue par défaut en fonction du navigateur
+switchLang(userLang);
+}
+});
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const savedLang = localStorage.getItem("selectedLang") || defaultLang;
-    switchLang(savedLang);
-
-    const langSwitcher = document.getElementById("lang-switcher");
-    if (langSwitcher) {
-      langSwitcher.value = savedLang;
-      langSwitcher.addEventListener("change", (e) => {
-        switchLang(e.target.value);
-      });
-    }
-  });
-
-  const burgerMenu = document.getElementById("burger-menu");
+const burgerMenu = document.getElementById("burger-menu");
   const navLinks = document.getElementById("nav-links");
 
   burgerMenu.addEventListener("click", () => {
