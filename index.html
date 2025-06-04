@@ -308,7 +308,7 @@
   }
 
   document.addEventListener("DOMContentLoaded", () => {
-    const savedLang = localStorage.getItem("selectedLang") || "fr";
+    const savedLang = localStorage.getItem("selectedLang") || defaultLang;
     switchLang(savedLang);
 
     const langSwitcher = document.getElementById("lang-switcher");
