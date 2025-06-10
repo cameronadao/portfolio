@@ -317,6 +317,30 @@ const burgerMenu = document.getElementById("burger-menu");
   burgerMenu.addEventListener("click", () => {
     navLinks.classList.toggle("active");
   });
+
+    function updateBrochureLink() {
+    const brochureLink = document.getElementById("brochure-link");
+    const lang = document.documentElement.lang;
+
+    if (lang === "en") {
+      brochureLink.href = "https://devwithcam.netlify.app/brochures/brochure-uk-devwithcam.pdf";
+    } else {
+      brochureLink.href = "https://devwithcam.netlify.app/brochures/brochure-fr-devwithcam.pdf";
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    updateBrochureLink();
+
+    const langSwitcher = document.getElementById("lang-switcher");
+    if (langSwitcher) {
+      langSwitcher.addEventListener("change", function () {
+        document.documentElement.lang = this.value;
+        updateBrochureLink();
+      });
+    }
+  });
+
 </script>
 </body>
 
