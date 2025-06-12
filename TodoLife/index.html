@@ -280,38 +280,41 @@
     }
 
     function setLanguage(lang) {
-      language = lang;
-      const title = document.getElementById("title");
-      const placeholders = {
-        fr: {
-          title: "ToDoLife",
-          input: "Ajouter une tâche",
-          all: "Toutes", completed: "Terminées", overdue: "En retard",
-          low: "Faible", medium: "Moyenne", high: "Haute",
-          deleteAll: "Tout supprimer"
-        },
-        en: {
-          title: "ToDoLife",
-          input: "Add a task",
-          all: "All", completed: "Completed", overdue: "Overdue",
-          low: "Low", medium: "Medium", high: "High",
-          deleteAll: "Clear all"
-        }
-      };
-
-      title.textContent = placeholders[lang].title;
-      document.querySelector('.todo-input').placeholder = placeholders[lang].input;
-
-      const btns = document.querySelectorAll('.filters button');
-      const keys = ['all', 'completed', 'overdue', 'low', 'medium', 'high'];
-      btns.forEach((btn, i) => btn.textContent = placeholders[lang][keys[i]]);
-      document.querySelector('.clear-all button').textContent = placeholders[lang].deleteAll;
+  language = lang;
+  const title = document.getElementById("title");
+  const placeholders = {
+    fr: {
+      title: "ToDoLife",
+      input: "Ajouter une tâche",
+      all: "Toutes", completed: "Terminées", overdue: "En retard",
+      low: "Faible", medium: "Moyenne", high: "Haute",
+      deleteAll: "Tout supprimer"
+    },
+    en: {
+      title: "ToDoLife",
+      input: "Add a task",
+      all: "All", completed: "Completed", overdue: "Overdue",
+      low: "Low", medium: "Medium", high: "High",
+      deleteAll: "Clear all"
     }
+  };
 
-    // Initialisation
-    document.querySelector('.todo-input').addEventListener('keydown', e => {
-      if (e.key === 'Enter') addTask();
-    });
+  title.textContent = placeholders[lang].title;
+  document.querySelector('.todo-input').placeholder = placeholders[lang].input;
+
+  const btns = document.querySelectorAll('.filters button');
+  const keys = ['all', 'completed', 'overdue', 'low', 'medium', 'high'];
+  btns.forEach((btn, i) => btn.textContent = placeholders[lang][keys[i]]);
+  document.querySelector('.clear-all button').textContent = placeholders[lang].deleteAll;
+
+  // 🟢 Mise à jour des options du select
+  const prioritySelect = document.querySelector('.priority-select');
+  prioritySelect.innerHTML = `
+    <option value="low">${placeholders[lang].low}</option>
+    <option value="medium">${placeholders[lang].medium}</option>
+    <option value="high">${placeholders[lang].high}</option>
+  `;
+}
 
     renderTasks();
   </script>
