@@ -269,6 +269,11 @@ section {
   margin-left: 100px;
 }
 
+.text-content-about {
+  margin-left: 5%;
+  text-align: justify;
+}
+
 
 
 /* === Services Section === */

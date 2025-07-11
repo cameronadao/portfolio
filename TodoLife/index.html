@@ -3,321 +3,281 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ToDoLife</title>
-  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/2560px-Flag_of_France.svg.png" type="image/png"/>
-  <style>
-    /* Base styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to right, #00b4d8, #00f5d4);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      color: #333;
-      flex-direction: column;
-    }
-
-    h1 {
-      font-size: 3rem;
-      color: white;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .language-selector {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-    }
-
-    .language-selector button {
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-
-    .language-selector img {
-      width: 30px;
-      margin-left: 10px;
-    }
-
-    .todo-container {
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      width: 100%;
-      max-width: 500px;
-    }
-
-    .input-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 15px;
-    }
-
-    .todo-input, .todo-date, .priority-select {
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      font-size: 1rem;
-      width: 100%;
-    }
-
-    .todo-date, .priority-select {
-      max-width: 150px;
-    }
-
-    .filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 15px;
-      justify-content: space-around;
-    }
-
-    .filters button {
-      padding: 5px 10px;
-      border-radius: 5px;
-      border: 1px solid #ddd;
-      cursor: pointer;
-      background-color: white;
-    }
-
-    .filters button.active {
-      background-color: #00f5d4;
-      color: white;
-    }
-
-    .clear-all {
-      text-align: center;
-      margin-bottom: 15px;
-    }
-
-    .clear-all button {
-      background-color: #ff4d4d;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .todo-list {
-      list-style: none;
-    }
-
-    .todo-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 10px;
-      padding: 10px;
-      background-color: #f9f9f9;
-      border-radius: 5px;
-      border-left: 5px solid transparent;
-    }
-
-    .todo-item.completed {
-      text-decoration: line-through;
-      background-color: #d3ffd3;
-    }
-
-    .todo-item.overdue {
-      border-left-color: red;
-    }
-
-    .todo-item.low {
-      background-color: #fff3e6;
-    }
-
-    .todo-item.medium {
-      background-color: #fff5b8;
-    }
-
-    .todo-item.high {
-      background-color: #e0f7fa;
-    }
-
-    .buttons button {
-      background-color: #00f5d4;
-      border: none;
-      padding: 5px 10px;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-left: 5px;
-    }
-
-    @media (max-width: 768px) {
-      h1 { font-size: 2rem; }
-      .input-group { flex-direction: column; }
-      .todo-date, .priority-select { max-width: 100%; }
-    }
-  </style>
+  <title>TodoLife</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/2560px-Flag_of_France.svg.png" type="image/png"/> 
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/2880px-Flag_of_the_United_Kingdom_%281-2%29.svg.png" type="image/png"/>
 </head>
 <body>
+  <h1 id="appTitle">TodoLife</h1>
 
+  <!-- Sélecteur de langue avec icônes -->
   <div class="language-selector">
     <button onclick="setLanguage('fr')">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/2560px-Flag_of_France.svg.png" alt="Français">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/2560px-Flag_of_France.svg.png" alt="Français" />
     </button>
     <button onclick="setLanguage('en')">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/2880px-Flag_of_the_United_Kingdom_%281-2%29.svg.png" alt="English">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/2880px-Flag_of_the_United_Kingdom_%281-2%29.svg.png" alt="English" />
     </button>
   </div>
 
-  <h1 id="title">ToDoLife</h1>
-
   <div class="todo-container">
+    <!-- Section d'ajout de tâche -->
     <div class="input-group">
-      <input type="text" class="todo-input" placeholder="Ajouter une tâche" />
-      <input type="date" class="todo-date" />
-      <select class="priority-select">
-        <option value="low">Faible</option>
-        <option value="medium">Moyenne</option>
-        <option value="high">Haute</option>
+      <input type="text" id="todoInput" class="todo-input" placeholder="" />
+      <div id="error-message" style="display: none; color: red;"></div>
+      <textarea id="todoDescription" class="todo-description" placeholder=""></textarea>
+      <input type="date" id="todoDate" class="todo-date"/>
+      <select id="prioritySelect" class="priority-select">
+        <option value="low"></option>
+        <option value="medium"></option>
+        <option value="high"></option>
+      </select>
+      <button onclick="addTodo()" id="addButton"></button>
+    </div>
+
+    <!-- Section de recherche -->
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="" onkeyup="searchTasks()"/>
+    </div>
+
+    <!-- Section de filtres et tri -->
+    <div class="filters">
+      <button onclick="setFilter('all')" id="filter-all" class="active"></button>
+      <button onclick="setFilter('active')" id="filter-active"></button>
+      <button onclick="setFilter('completed')" id="filter-completed"></button>
+      <select id="sortSelect" onchange="sortTodos()">
+        <option value="date"></option>
+        <option value="priority"></option>
       </select>
     </div>
-    <div class="filters">
-      <button onclick="setFilter('all')" class="active">Toutes</button>
-      <button onclick="setFilter('completed')">Terminées</button>
-      <button onclick="setFilter('overdue')">En retard</button>
-      <button onclick="setFilter('low')">Faible</button>
-      <button onclick="setFilter('medium')">Moyenne</button>
-      <button onclick="setFilter('high')">Haute</button>
+
+    <!-- Section de notification et suppression -->
+    <div class="notification-toggle">
+      <label><input type="checkbox" id="notifToggle"/> </label>
     </div>
     <div class="clear-all">
-      <button onclick="clearAllTasks()">Tout supprimer</button>
+      <button onclick="clearAllTodos()" id="clearAllButton"></button>
     </div>
-    <ul class="todo-list"></ul>
+
+    <!-- Liste des tâches -->
+    <ul id="todoList" class="todo-list"></ul>
   </div>
 
+  <script src="app.js"></script>
+</body>
+</html>
+
   <script>
-    let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    let todos = [];
     let filter = 'all';
-    let language = 'fr';
+    let searchQuery = '';
+    let language = localStorage.getItem('language') || 'fr'; // Récupérer la langue choisie précédemment
 
-    const todoList = document.querySelector('.todo-list');
-
-    function saveTasks() {
-      localStorage.setItem('tasks', JSON.stringify(tasks));
+    // Fonction pour changer la langue
+    function setLanguage(lang) {
+      language = lang;
+      localStorage.setItem('language', lang); // Sauvegarder la langue dans localStorage
+      updateTexts(); // Mettre à jour les textes de l'interface
+      renderTodos(); // Rafraîchir les tâches pour s'assurer que les textes sont mis à jour
     }
 
-    function renderTasks() {
-      todoList.innerHTML = '';
-      const now = new Date().toISOString().split('T')[0];
+    // Fonction pour mettre à jour tous les textes en fonction de la langue
+    function updateTexts() {
+      const texts = {
+        fr: {
+          title: 'TodoLife',
+          placeholderTask: "Ajouter une tâche...",
+          placeholderDescription: "Ajouter une description...",
+          addButton: "Ajouter",
+          errorMessage: "Merci d’écrire une tâche avant de l’ajouter.",
+          searchPlaceholder: "Rechercher une tâche...",
+          filterAll: "Toutes",
+          filterActive: "À faire",
+          filterCompleted: "Complètes",
+          sortByDate: "Trier par date",
+          sortByPriority: "Trier par priorité",
+          clearAllButton: "Supprimer toutes les tâches",
+          notifLabel: "Activer les notifications pour les tâches en retard",
+          priorityLow: "Basse",
+          priorityMedium: "Moyenne",
+          priorityHigh: "Haute",
+        },
+        en: {
+          title: 'TodoLife',
+          placeholderTask: "Add a task...",
+          placeholderDescription: "Add a description...",
+          addButton: "Add",
+          errorMessage: "Please write a task before adding.",
+          searchPlaceholder: "Search a task...",
+          filterAll: "All",
+          filterActive: "Active",
+          filterCompleted: "Completed",
+          sortByDate: "Sort by date",
+          sortByPriority: "Sort by priority",
+          clearAllButton: "Clear all tasks",
+          notifLabel: "Enable notifications for overdue tasks",
+          priorityLow: "Low",
+          priorityMedium: "Medium",
+          priorityHigh: "High",
+        }
+      };
 
-      tasks.forEach((task, i) => {
-        if (filter !== 'all' && !taskMatchesFilter(task)) return;
+      
 
-        const li = document.createElement('li');
-        li.className = `todo-item ${task.priority} ${task.completed ? 'completed' : ''} ${task.date < now && !task.completed ? 'overdue' : ''}`;
-        li.innerHTML = `
-          <span>${task.text} - ${task.date} - ${task.priority}</span>
-          <div class="buttons">
-            <button onclick="toggleComplete(${i})">✓</button>
-            <button onclick="deleteTask(${i})">🗑️</button>
-          </div>
-        `;
+      // Appliquer les textes de la langue choisie
+      const currentTexts = texts[language];
+      document.getElementById("appTitle").textContent = currentTexts.title;
+      document.getElementById("todoInput").placeholder = currentTexts.placeholderTask;
+      document.getElementById("todoDescription").placeholder = currentTexts.placeholderDescription;
+      document.getElementById("addButton").textContent = currentTexts.addButton;
+      document.getElementById("error-message").textContent = currentTexts.errorMessage;
+      document.getElementById("searchInput").placeholder = currentTexts.searchPlaceholder;
+      document.getElementById("filter-all").textContent = currentTexts.filterAll;
+      document.getElementById("filter-active").textContent = currentTexts.filterActive;
+      document.getElementById("filter-completed").textContent = currentTexts.filterCompleted;
+      document.getElementById("sortSelect").children[0].textContent = currentTexts.sortByDate;
+      document.getElementById("sortSelect").children[1].textContent = currentTexts.sortByPriority;
+      document.getElementById("clearAllButton").textContent = currentTexts.clearAllButton;
+      document.getElementById("notifToggle").nextSibling.nodeValue = currentTexts.notifLabel;
+      document.getElementById("prioritySelect").children[0].textContent = currentTexts.priorityLow;
+      document.getElementById("prioritySelect").children[1].textContent = currentTexts.priorityMedium;
+      document.getElementById("prioritySelect").children[2].textContent = currentTexts.priorityHigh;
+    }
+
+    function addTodo() {
+      const todoInput = document.getElementById("todoInput");
+      const todoDescription = document.getElementById("todoDescription");
+      const todoDate = document.getElementById("todoDate");
+      const prioritySelect = document.getElementById("prioritySelect");
+      const errorMessage = document.getElementById("error-message");
+
+      const task = todoInput.value.trim();
+      const description = todoDescription.value.trim();
+      const date = todoDate.value;
+      const priority = prioritySelect.value;
+
+      if (!task) {
+        errorMessage.style.display = "block";
+        return;
+      } else {
+        errorMessage.style.display = "none";
+      }
+
+      todos.push({ task, description, date, priority, completed: false });
+
+      // Reset inputs
+      todoInput.value = "";
+      todoDescription.value = "";
+      todoDate.value = "";
+      prioritySelect.value = "low";
+
+      saveTodos();
+      renderTodos();
+    }
+
+    function saveTodos() {
+      localStorage.setItem('todos', JSON.stringify(todos));
+    }
+
+    function loadTodos() {
+      const storedTodos = localStorage.getItem('todos');
+      if (storedTodos) {
+        todos = JSON.parse(storedTodos);
+      }
+    }
+
+    function renderTodos() {
+      const todoList = document.getElementById("todoList");
+      todoList.innerHTML = "";
+
+      const filteredTodos = todos.filter(todo => {
+        if (filter === 'all') return true;
+        if (filter === 'active') return !todo.completed;
+        if (filter === 'completed') return todo.completed;
+      }).filter(todo => 
+        todo.task.toLowerCase().includes(searchQuery.toLowerCase()) || 
+        (todo.description && todo.description.toLowerCase().includes(searchQuery.toLowerCase()))
+      );
+
+      filteredTodos.forEach((todo, index) => {
+        const li = document.createElement("li");
+        li.className = `todo-item ${todo.completed ? "completed" : ""} ${todo.priority}`;
+
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.checked = todo.completed;
+        checkbox.addEventListener("change", () => toggleTodo(index));
+        li.appendChild(checkbox);
+
+        const span = document.createElement("span");
+        span.innerHTML = `<strong>${todo.task}</strong> - ${todo.date || "No date"} (${todo.priority})`;
+        if (todo.description) {
+          const desc = document.createElement("div");
+          desc.textContent = todo.description;
+          desc.style.fontSize = "0.9em";
+          desc.style.color = "#555";
+          li.appendChild(span);
+          li.appendChild(desc);
+        } else {
+          li.appendChild(span);
+        }
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "Supprimer";
+        deleteBtn.addEventListener("click", () => deleteTodo(index));
+        li.appendChild(deleteBtn);
+
         todoList.appendChild(li);
       });
     }
 
-    function taskMatchesFilter(task) {
-      if (filter === 'completed') return task.completed;
-      if (filter === 'overdue') return !task.completed && task.date < new Date().toISOString().split('T')[0];
-      return task.priority === filter;
+    function toggleTodo(index) {
+      todos[index].completed = !todos[index].completed;
+      saveTodos();
+      renderTodos();
     }
 
-    function addTask() {
-      const text = document.querySelector('.todo-input').value.trim();
-      const date = document.querySelector('.todo-date').value;
-      const priority = document.querySelector('.priority-select').value;
-
-      if (!text || !date) return alert("Veuillez remplir tous les champs.");
-
-      tasks.push({ text, date, priority, completed: false });
-      saveTasks();
-      renderTasks();
-      document.querySelector('.todo-input').value = '';
+    function deleteTodo(index) {
+      todos.splice(index, 1);
+      saveTodos();
+      renderTodos();
     }
 
-    function toggleComplete(i) {
-      tasks[i].completed = !tasks[i].completed;
-      saveTasks();
-      renderTasks();
+    function clearAllTodos() {
+      todos = [];
+      saveTodos();
+      renderTodos();
     }
 
-    function deleteTask(i) {
-      if (confirm("Supprimer cette tâche ?")) {
-        tasks.splice(i, 1);
-        saveTasks();
-        renderTasks();
+    function setFilter(newFilter) {
+      filter = newFilter;
+      document.querySelectorAll(".filters button").forEach(btn => btn.classList.remove("active"));
+      document.getElementById(`filter-${newFilter}`).classList.add("active");
+      renderTodos();
+    }
+
+    function searchTasks() {
+      searchQuery = document.getElementById("searchInput").value;
+      renderTodos();
+    }
+
+    document.getElementById("todoInput").addEventListener("keypress", function(e) {
+      if (e.key === "Enter") addTodo();
+    });
+
+    document.getElementById("notifToggle").addEventListener("change", function() {
+      if (this.checked) {
+        alert("Notifications activées ! (Simulées)");
+      } else {
+        alert("Notifications désactivées.");
       }
-    }
+    });
 
-    function clearAllTasks() {
-      if (confirm("Tout supprimer ?")) {
-        tasks = [];
-        saveTasks();
-        renderTasks();
-      }
-    }
-
-    function setFilter(f) {
-      filter = f;
-      document.querySelectorAll('.filters button').forEach(btn => btn.classList.remove('active'));
-      document.querySelector(`.filters button[onclick="setFilter('${f}')"]`).classList.add('active');
-      renderTasks();
-    }
-
-    function setLanguage(lang) {
-  language = lang;
-  const title = document.getElementById("title");
-  const placeholders = {
-    fr: {
-      title: "ToDoLife",
-      input: "Ajouter une tâche",
-      all: "Toutes", completed: "Terminées", overdue: "En retard",
-      low: "Faible", medium: "Moyenne", high: "Haute",
-      deleteAll: "Tout supprimer"
-    },
-    en: {
-      title: "ToDoLife",
-      input: "Add a task",
-      all: "All", completed: "Completed", overdue: "Overdue",
-      low: "Low", medium: "Medium", high: "High",
-      deleteAll: "Clear all"
-    }
-  };
-
-  title.textContent = placeholders[lang].title;
-  document.querySelector('.todo-input').placeholder = placeholders[lang].input;
-
-  const btns = document.querySelectorAll('.filters button');
-  const keys = ['all', 'completed', 'overdue', 'low', 'medium', 'high'];
-  btns.forEach((btn, i) => btn.textContent = placeholders[lang][keys[i]]);
-  document.querySelector('.clear-all button').textContent = placeholders[lang].deleteAll;
-
-  // 🟢 Mise à jour des options du select
-  const prioritySelect = document.querySelector('.priority-select');
-  prioritySelect.innerHTML = `
-    <option value="low">${placeholders[lang].low}</option>
-    <option value="medium">${placeholders[lang].medium}</option>
-    <option value="high">${placeholders[lang].high}</option>
-  `;
-}
-
-    renderTasks();
+    loadTodos();
+    updateTexts();
+    renderTodos();
   </script>
-
 </body>
 </html>
