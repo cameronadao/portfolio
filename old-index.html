@@ -4,15 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Business Developer| Cameron Adao | DevWithCam</title>
-  <meta name="description" content="Création de sites web et applications iOS modernes, fluides et performants. Portfolio de Cameron Adao. Travaillons ensemble sur vos projets !" />
+  <meta name="description" content="Solutions digitales sur-mesure pour développer votre activité : automatisation, marketing digital, création de sites web et apps iOS. Portfolio de Cameron Adao." />
   <link rel="canonical" href="https://devwithcam.netlify.app" />
-  <meta property="og:title" content="Développeur Web & App iOS | Cameron Adao | DevWithCam" />
-  <meta property="og:description" content="Création de sites web et applications iOS modernes et performants. Portfolio de Cameron Adao." />
+  <meta property="og:title" content="Business Developer Digital | Cameron Adao | DevWithCam" />
+  <meta property="og:description" content="Automatisation, prospection digitale, présence en ligne et développement d'outils pour entrepreneurs, TPE/PME et startups. Découvrez mon portfolio." />
   <meta property="og:image" content="https://devwithcam.netlify.app/Logo/portrait.jpeg" />
   <meta property="og:url" content="https://devwithcam.netlify.app" />
   <meta property="og:type" content="website" />
-  <meta name="author" content="Cameron Adao">
-  <meta name="robots" content="index, follow">
+  <meta name="author" content="Cameron Adao" />
+  <meta name="robots" content="index, follow" />
   <meta name="google-site-verification" content="1YsbnkA572e2xdgbYlIEpHxtUv6Lt72_sn6YJAMx4PI" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <!-- Canonical -->
@@ -96,8 +96,7 @@
 <section class="index-buttons">
   <a href="services.html"><button class="index-button" data-key="linkservices">Services</button></a>
   <a href="projets.html"><button class="index-button" data-key="linkprojects">Projets</button></a>
-  <a id="brochure-link" href="#" target="_blank" rel="noopener">
-  <button class="index-button" id="brochure-button" data-key="linkbrochure">Brochure</button></a>
+  <a href="https://calendly.com/devwithcam/30min"><button class="index-button" data-key="linkrdv">Prendre rendez-vous</button></a>
   </section>
 
   <!-- Carrousel -->
@@ -109,7 +108,17 @@
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
     </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="exportB38766DA-5921-41CC-84E5-F9A4DADE2BD2.png" class="d-block w-100" alt="Projet ToDoLife" loading="lazy">
+        <div class="carousel-caption d-none d-md-block">
+          <h5 data-key="projet4">Ness Technologies</h5>
+          <h6 data-key="typeprojet4">Automatiser les tâches commerciales.</h6>
+          <p data-key="techno-projet4">Technologies : Make, Zapier, Microsoft Excel, Google Sheets, ChatGPT.</p>
+        </div>
+      </div>
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="ToDoLife.png" class="d-block w-100" alt="Projet ToDoLife" loading="lazy">
@@ -221,6 +230,7 @@
       description: "Aujourd’hui, toute entreprise a besoin d’une stratégie digitale claire pour croître. Qu’il s’agisse d’un entrepreneur solo, d’une PME ou d’un grand groupe, j’interviens pour structurer, automatiser et accélérer votre développement commercial.",
       linkservices: "Services",
       linkprojects: "Projets",
+      linkrdv: "Prendre rendez-vous",
       projet0: "ShopWithCam",
       projet1: "OnTourWithCam",
       projet2: "Le Café de Camille",
@@ -242,7 +252,7 @@
     },
   
     en: {
-      contactTitle: "Web & iOS App Developer in Paris | Cameron Adao | DevWithCam",
+      contactTitle: "Business Developer | Cameron Adao | DevWithCam",
       navAccueil: "Home",
       navProjets: "Projects",
       navServices: "Services",
@@ -252,6 +262,7 @@
       description: "Today, every business needs a clear digital strategy to grow. Whether it's a solo entrepreneur, an SME, or a large corporation, I help structure, automate, and accelerate your business development.",
       linkservices: "Services",
       linkprojects: "Projects",
+      linkrdv: "Book a meeting",
       projet0: "ShopWithCam",
       projet1: "OnTourWithCam",
       projet2: "Le Café de Camille",
@@ -340,8 +351,12 @@ const burgerMenu = document.getElementById("burger-menu");
       });
     }
   });
-
 </script>
+<!-- Calendly badge widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/devwithcam', text: 'Schedule time with me', color: '#0069ff', textColor: '#ffffff', branding: true }); }</script>
+<!-- Calendly badge widget end -->
 </body>
 
 </html>

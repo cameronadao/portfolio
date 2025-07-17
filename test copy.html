@@ -1,24 +1,57 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>🚀 Cameron Adao | DevWithCam | Business & Web Developer</title>
-    <meta name="description" content="Cameron Adao | Développeur digital créatif & Business Developer. Création de solutions web modernes, marketing automation & branding sur mesure." />  
-    
-     <!-- Bootstrap CSS -->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Business Developer| Cameron Adao | DevWithCam</title>
+  <meta name="description" content="Création de sites web et applications iOS modernes, fluides et performants. Portfolio de Cameron Adao. Travaillons ensemble sur vos projets !" />
+  <link rel="canonical" href="https://devwithcam.netlify.app" />
+  <meta property="og:title" content="Développeur Web & App iOS | Cameron Adao | DevWithCam" />
+  <meta property="og:description" content="Création de sites web et applications iOS modernes et performants. Portfolio de Cameron Adao." />
+  <meta property="og:image" content="https://devwithcam.netlify.app/Logo/portrait.jpeg" />
+  <meta property="og:url" content="https://devwithcam.netlify.app" />
+  <meta property="og:type" content="website" />
+  <meta name="author" content="Cameron Adao">
+  <meta name="robots" content="index, follow">
+  <meta name="google-site-verification" content="1YsbnkA572e2xdgbYlIEpHxtUv6Lt72_sn6YJAMx4PI" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <!-- Canonical -->
+  <link rel="canonical" href="https://devwithcam.netlify.app/" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Cameron Adao",
+      "url": "https://devwithcam.netlify.app",
+      "sameAs": [
+        "https://www.instagram.com/devwithcam/",
+        "https://x.com/devwithcam",
+        "https://www.facebook.com/profile.php?id=61575721243441",
+        "https://linkedin.com/in/cameron-adao-683b031bb",
+        "https://www.linkedin.com/company/devwithcam/",
+        "https://github.com/cameronadao",
+        "https://www.freelancer.com/u/devwithcam?sb=t",
+        "https://fr.fiverr.com/s/99PobWK",
+        "https://www.malt.fr/profile/cameronadao",
+        "https://www.upwork.com/freelancers/~015988a8ec6f7199e8?mp_source=share"
+      ]
+    }
+    </script>
+    <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
-  <!-- Tes styles perso -->
-  <link href="style.css" rel="stylesheet" />
+  <link href="test-copy.css" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
-  </head>
-<body>
+</head>
 
-<!-- === Header === -->
+<body>
+  <!-- === Header === -->
 <header>
   <nav>
     <a href="index.html" class="lien-icone">
@@ -33,10 +66,10 @@
     <!-- LIENS DE NAVIGATION -->
     <div class="nav-links" id="nav-links">
       <a href="index.html" data-key="navAccueil">Accueil</a>
-      <a href="#services" data-key="navServices">Services</a>
-      <a href="#projets" data-key="navProjets">Projets</a>
-      <a href="#about" data-key="navApropos">À propos</a>
-      <a href="#contacts" data-key="navContact">Contact</a>
+      <a href="#services" class="text-white text-decoration-none">Services</a>
+      <a href="#projets" class="text-white text-decoration-none">Projets</a>
+      <a href="#about" class="text-white text-decoration-none">À propos</a>
+      <a href="#contacts" class="text-white text-decoration-none">Contact</a>
     </div>
       <select id="lang-switcher">
         <option value="fr" data-icon="🇫🇷">🇫🇷</option>
@@ -48,14 +81,14 @@
   <section class="index-content" data-aos="fade-up">
     <div class="index-text-content">
       <h1>Cameron Adao</h1>
-      <h2 data-key="title">Business & Web Developer</h2>
-      <p data-key="description"><strong>Vous avez la vision — je vous apporte la tech pour la concrétiser.</strong><br>J’aide les entrepreneurs, freelances et PME à créer des sites performants, automatiser leurs processus et accélérer leur développement.</p>
+      <h2 data-key="title">Business Developer Digital</h2>
+      <p data-key="description">J'aide les entrepreneurs, freelances & PME à se digitaliser, automatiser et accélérer leur croissance.</p>
     </div>
   </section>
 
   <section class="index-buttons">
-    <a href="#services"><button class="index-button" data-key="services">Services</button></a>
-    <a href="#projets"><button class="index-button" data-key="projets">Projets</button></a>
+    <a href="#services"><button class="index-button">🛠️ Services</button></a>
+    <a href="#projets"><button class="index-button" data-key="projets">📁 Projets</button></a>
     <a href="https://calendly.com/devwithcam/30min"><button class="index-button" data-key="rdv">📅 Rendez-vous</button></a>
   </section>
 
@@ -197,24 +230,24 @@
     </div>
     <section class="services-grid">
       <div class="project-card">
-        <h3 data-key="service1">🚀 Business Developement & Analyst</h3>
-        <p data-key="infoservice1">Je mets en place des systèmes d’acquisition et d’analyse pour générer des leads qualifiés, automatiser votre prospection et piloter votre performance commerciale.</p>
-        <p data-key="techservice1"><strong>(scraping de données, enrichment de prospects, campagnes de cold emailing, gestion via CRM, création de dashboards, suivi des KPI, automatisation des processus)</strong></p>
+        <h3 data-key="service1">🚀 Business Developer & Analist</h3>
+        <p data-key="infoservice1">Je mets en place des systèmes performants pour identifier, qualifier et convertir vos prospects à grande échelle.</p>
+        <p data-key="techservice1"><strong>(Scraping, enrichment, cold emailing, CRM)</strong></p>
       </div>
       <div class="project-card">
         <h3 data-key="service2">💻 Tech & Web Developement</h3>
-        <p data-key="infoservice2">Je conçois des sites performants et responsives, pensés pour convertir, optimiser le SEO et s’intégrer à vos outils métier.</p>
-        <p data-key="techservice2"><strong>(HTML, CSS, Bootstrap, JavaScript, React, Webflow, WordPress)</strong></p>
+        <p data-key="infoservice2">Automatisation de la prospection, des relances, du suivi client ou encore des rapports — gagnez du temps et augmentez votre efficacité.</p>
+        <p data-key="techservice2"><strong>(Python, Make, Zapier, PhantomBuster, Lemlist, Instantly, OpenAI...)</strong></p>
       </div>
       <div class="project-card">
-        <h3 data-key="service3">📱 Developeur iOS</h3>
-        <p data-key="infoservice3">Je développe des applications iOS intuitives et connectées, parfaitement intégrées à vos systèmes existants</p>
-        <p data-key="techservice3"><strong>(Swift, SwiftUI, UIKit, REST APIs, Xcode)</strong></p>
+        <h3 data-key="service3">📱 Developer iOS</h3>
+        <p data-key="infoservice3">Je crée et pilote vos campagnes de cold email avec une approche ultra personnalisée pour maximiser les taux d’ouverture et de réponse.</p>
+        <p data-key="techservice3"><strong>(Smartlead, Instantly, Mailreach, copywriting AIDA/PAS)</strong></p>
       </div>
       <div class="project-card">
         <h3 data-key="service4">🤖 IA & Automatisation</h3>
-        <p data-key="infoservice4">J’automatise vos workflows pour gagner en efficacité : prospection, relance, reporting ou gestion client.</p>
-        <p data-key="techservice4"><strong>Python, Make, Zapier, OpenAI, agents IA, scénarios automatisés, intégration d’outils métier</strong></p>
+        <p data-key="infoservice4">Des sites rapides, responsives et optimisés SEO, conçus pour offrir une expérience fluide sur tous vos écrans et convertir vos visiteurs en clients : design persuasif, storytelling et intégration CRM/analytics.</p>
+        <p data-key="techservice4"><strong>(Webflow, WordPress, Framer, Copywriting)</strong></p>
       </div>
     </section>
   </section>
@@ -260,7 +293,7 @@
     <p data-key="footer">© 2025 Cameron Adao | DevWithCam | Tous droits réservés</p>
   </footer>
 
-  <script>
+<script>
 
     // Récupère la langue du navigateur (ex : "en-US", "fr-FR")
     const userLang = navigator.language || navigator.userLanguage;
@@ -281,69 +314,28 @@
         navServices: "Services",
         navApropos: "À Propos",
         navContact: "Contact",
-        h2title: "Business & Web Developer",
-        description: "Vous avez la vision — je vous apporte la tech pour la concrétiser. J’aide les entrepreneurs, freelances et PME à créer des sites performants, automatiser leurs processus et accélérer leur développement.",
-        services: "Services",
-        projets: "Projets",
-        rdv: "📅 Prendre rendez-vous",
-        realisations: "Mes Réalisations",
-        descriptionprojets: "Découvrez une sélection de mes réalisations : sites web, applications mobiles, tableaux de bord et systèmes de gestion. Chaque projet est conçu avec soin pour allier performance, design et ergonomie, et reflète mon savoir-faire technique et créatif au service de vos besoins.",
-        app1: "Technologies : HTML5 + CSS3 + JavaScript (ES6)",
-        app2: "Technologies : Figma + HTML/CSS avancé + Bootstrap 5",
-        app3: "Technologies : HTML5 + CSS3",
-        app4: "Technologies : WordPress",
-        projetalternance: "Sales Booster",
-        typeprojetalternance: "Automatiser les tâches commerciales.",
-        techno_projetalternance: "Technologies : Make, Zapier, Microsoft Excel, Google Sheets, ChatGPT",
+        h2title: "Business Developer Digital",
+        description: "Aujourd’hui, toute entreprise a besoin d’une stratégie digitale claire pour croître. Qu’il s’agisse d’un entrepreneur solo, d’une PME ou d’un grand groupe, j’interviens pour structurer, automatiser et accélérer votre développement commercial.",
+        linkservices: "Services",
+        linkprojects: "Projets",
+        projet0: "ShopWithCam",
         projet1: "OnTourWithCam",
-        typeprojet1: "Blog Personnel",
-        techno_projet1: "Technologies : WordPress",
         projet2: "Le Café de Camille",
-        typeprojet2: "Site vitrine",
-        techno_projet2: "Technologies : HTML5, CSS3",
         projet3: "ZenFlow",
-        typeprojet3: "Landing page responsive",
-        techno_projet3: "Technologies : Figma, HTML/CSS avancé, Bootstrap 5",
         projet4: "ToDoLife",
-        typeprojet4: "Appli web de gestion de tâches",
+        typeprojet0: "Boutique e-commerce",
+        typeprojet1: "Blog personnel",
+        typeprojet2: "Site vitrine",
+        typeprojet3: "Landing page responsive",
+        typeprojet4: "Application web de gestion de tâches",
+        techno_projet0: "Technologies : WordPress, WooCommerce",
+        techno_projet1: "Technologies : WordPress",
+        techno_projet2: "Technologies : HTML5, CSS3",
+        techno_projet3: "Technologies : Figma, HTML/CSS avancé, Bootstrap 5",
         techno_projet4: "Technologies : HTML5, CSS3, JavaScript (ES6)",
-        projet5: "BudgetView",
-        typeprojet5: "Dashboard React de gestion budgétaire.",
-        techno_projet5: "Technologies : React.js, Redux, Charts.js",
-        projet6: "SkillSwap",
-        typeprojet6: "Plateforme d’échange de compétences",
-        techno_projet6: "Technologies :<br>Frontend : React.js + Axios + React Router<br>Backend : Node.js + Express.js<br>Base de données : MongoDB (via Mongoose)<br>API : RESTful API sécurisée<br>Auth : JWT (JSON Web Tokens) pour les connexions<br>Déploiement : Render.com (gratuit) pour API + Vercel pour Frontend<br>Hébergement base de données : MongoDB Atlas (gratuit)",
-        projet7: "SpendWise",
-        typeprojet7: "Application iOS Swift de suivi de finances",
-        techno_projet7: "Technologies : Swift + SwiftUI + CoreData",
-        projet8: "AskMyDev",
-        typeprojet8: "Assistant IA pour développeurs",
-        techno_projet8: "Technologies : Python + API OpenAI + Frontend HTML/CSS/JS simple",
-        button: "Voir le projet",
-        descriptionservices: "De la prospection à la conversion, je vous accompagne à chaque étape de votre développement commercial digital. Génération de leads, automatisation, campagnes d’emailing, création de sites web ou outils sur-mesure : ensemble, nous mettons en place des solutions concrètes, performantes et scalables pour booster votre acquisition et faire grandir votre activité efficacement.",
-        service1: "🚀 Business Developement & Analyst",
-        infoservice1: "Je mets en place des systèmes d’acquisition et d’analyse pour générer des leads qualifiés, automatiser votre prospection et piloter votre performance commerciale.",
-        techservice1: "(scraping de données, enrichment de prospects, campagnes de cold emailing, gestion via CRM, création de dashboards, suivi des KPI, automatisation des processus)",
-        service2: "💻 Tech & Web Developement",
-        infoservice2: "Je conçois des sites performants et responsives, pensés pour convertir, optimiser le SEO et s’intégrer à vos outils métier.",
-        techservice2: "(HTML, CSS, Bootstrap, JavaScript, React, Webflow, WordPress)",
-        service3: "📱 Developeur iOS",
-        infoservice3: "Je développe des applications iOS intuitives et connectées, parfaitement intégrées à vos systèmes existants",
-        techservice3: "(Swift, SwiftUI, UIKit, REST APIs, Xcode)",
-        service4: "🤖 IA & Automatisation",
-        infoservice4: "J’automatise vos workflows pour gagner en efficacité : prospection, relance, reporting ou gestion client.",
-        techservice4: "Python, Make, Zapier, OpenAI, agents IA, scénarios automatisés, intégration d’outils métier",
-        about: "À Propos",
-        descriptionabout: "Je suis Cameron, Business Developer Digital passionné par la croissance des entreprises à travers des solutions modernes, automatisées et orientées résultats. Fort d’une expérience en développement commercial, j’aide aujourd’hui les entrepreneurs, startups et TPE/PME à booster leur visibilité, générer plus de prospects et gagner un temps précieux grâce à des outils digitaux sur-mesure. Mon approche combine stratégie business, marketing digital et déploiement de solutions concrètes : site web professionnel, automatisation de prospection, présence en ligne optimisée, ou encore développement d’applications iOS. Formé au développement web, à l’UX/UI et aux outils no-code/low-code, je conçois des systèmes efficaces, intuitifs et évolutifs — pensés pour générer de la vraie valeur. Objectif : vous aider à digitaliser vos processus, attirer plus de clients, et automatiser ce qui peut l’être pour vous concentrer sur ce qui compte vraiment.",
-        h2: "Ce que je fais ?",
-        li1: "Automatisation de tâches commerciales (emailing, CRM, prospection)",
-        li2: "Création de sites web professionnels et landing pages (HTML, CSS, JS, WordPress)",
-        li3: "Développement d’applications web modernes (React, Node.js)",
-        li4: "Développement d’apps iOS natives (Swift / SwiftUI)",
-        li5: "Mise en place de tunnels de conversion & outils marketing",
-        li6: "Intégration d’outils no-code / IA (Zapier, Make, OpenAI…)",
-        contacts: "Parlons de votre projet",
-        footer: "© 2025 Cameron Adao | DevWithCam | Tous droits réservés",
+        personal_data: "Données personnelles",
+        navConfidentialité: "Politique de Confidentialité",
+        linkbrochure: "Brochure",
       },
     
       en: {
@@ -353,20 +345,10 @@
         navServices: "Services",
         navApropos: "About",
         navContact: "Contact",
-        h2title: "Business & Web Developer",
-        description: "You have the vision — I bring the tech to make it happen. I help entrepreneurs, freelancers, and SMEs create high-performance websites, automate their processes, and accelerate their growth.",
-        services: "Services",
-        projets: "Projects",
-        rdv: "📅 Book a call",
-        realisations: "My Projects",
-        descriptionprojets: "Discover a selection of my projects: websites, mobile applications, dashboards, and management systems. Each project is crafted with care to combine performance, design, and usability, reflecting my technical and creative expertise to meet your needs.",
-        app1: "Technologies: HTML5 + CSS3 + JavaScript (ES6)",
-        app2: "Technologies: Figma + Advanced HTML/CSS + Bootstrap 5",
-        app3: "Technologies: HTML5 + CSS3",
-        app4: "Technologies: WordPress",
-        projetalternance: "Sales Booster",
-        typeprojetalternance: "Automating sales tasks.",
-        techno_projetalternance: "Technologies: Make, Zapier, Microsoft Excel, Google Sheets, ChatGPT",
+        h2title: "Digital Business Developer",
+        description: "Today, every business needs a clear digital strategy to grow. Whether it's a solo entrepreneur, an SME, or a large corporation, I help structure, automate, and accelerate your business development.",
+        linkservices: "Services",
+        linkprojects: "Projects",
         projet0: "ShopWithCam",
         projet1: "OnTourWithCam",
         projet2: "Le Café de Camille",
@@ -382,43 +364,9 @@
         techno_projet2: "Technologies: HTML5, CSS3",
         techno_projet3: "Technologies: Figma, Advanced HTML/CSS, Bootstrap 5",
         techno_projet4: "Technologies: HTML5, CSS3, JavaScript (ES6)",
-        projet5: "BudgetView",
-        typeprojet5: "React budget management dashboard.",
-        techno_projet5: "Technologies: React.js, Redux, Charts.js",
-        projet6: "SkillSwap",
-        typeprojet6: "Skills exchange platform",
-        techno_projet6: "Technologies:Frontend: React.js + Axios + React Router Backend: Node.js + Express.js Database: MongoDB (via Mongoose) API: Secure RESTful API Auth: JWT (JSON Web Tokens) for login Deployment: Render.com (free) for API + Vercel for Frontend Database hosting: MongoDB Atlas (free)",
-        projet7: "SpendWise",
-        typeprojet7: "iOS Swift finance tracking app",
-        techno_projet7: "Technologies: Swift + SwiftUI + CoreData",
-        projet8: "AskMyDev",
-        typeprojet8: "AI assistant for developers",
-        techno_projet8: "Technologies: Python + OpenAI API + Simple HTML/CSS/JS frontend",
-        button: "View Project",
-        descriptionservices: "From prospecting to conversion, I support you at every stage of your digital business development. Lead generation, automation, email campaigns, website creation or custom tools: together, we implement concrete, effective and scalable solutions to boost your acquisition and grow your business efficiently.",
-        service1: "🚀 Business Development & Analyst",
-        infoservice1: "I set up acquisition and analysis systems to generate qualified leads, automate your prospecting, and manage your sales performance.",
-        techservice1: "(data scraping, prospect enrichment, cold emailing campaigns, CRM management, dashboard creation, KPI tracking, process automation)",
-        service2: "💻 Tech & Web Development",
-        infoservice2: "I design high-performance and responsive websites, designed to convert, optimize SEO, and integrate with your business tools.",
-        techservice2: "(HTML, CSS, Bootstrap, JavaScript, React, Webflow, WordPress)",
-        service3: "📱 iOS Developer",
-        infoservice3: "I develop intuitive and connected iOS applications, perfectly integrated with your existing systems",
-        techservice3: "(Swift, SwiftUI, UIKit, REST APIs, Xcode)",
-        service4: "🤖 AI & Automation",
-        infoservice4: "I automate your workflows to gain efficiency: prospecting, follow-up, reporting, or client management.",
-        techservice4: "Python, Make, Zapier, OpenAI, AI agents, automated scenarios, integration of business tools",
-        about: "About",
-        descriptionabout: "I am Cameron, a Digital Business Developer passionate about growing businesses through modern, automated, and results-oriented solutions. With a background in business development, I now help entrepreneurs, startups, and SMEs boost their visibility, generate more leads, and save valuable time with custom digital tools. My approach combines business strategy, digital marketing, and the deployment of concrete solutions: professional websites, prospecting automation, optimized online presence, or even iOS application development. Trained in web development, UX/UI, and no-code/low-code tools, I design efficient, intuitive, and scalable systems — designed to generate real value. My goal: to help you digitize your processes, attract more clients, and automate what can be automated so you can focus on what really matters.",
-        h2: "What I do?",
-        li1: "Automation of commercial tasks (emailing, CRM, prospecting)",
-        li2: "Creation of professional websites and landing pages (HTML, CSS, JS, WordPress)",
-        li3: "Development of modern web applications (React, Node.js)",
-        li4: "Development of native iOS apps (Swift / SwiftUI)",
-        li5: "Setting up conversion funnels & marketing tools",
-        li6: "Integration of no-code / AI tools (Zapier, Make, OpenAI...)",
-        contacts: "Let's talk about your project",
-        footer: "© 2025 Cameron Adao | DevWithCam | All rights reserved"
+        navConfidentialité: "Privacy Policy",
+        personal_data: "Personal Data",
+        linkbrochure: "Brochure",
       }
     };
   
@@ -491,13 +439,6 @@
     });
   
   </script>
-<!-- Début de widget de badge Calendly -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-<script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/devwithcam/30min?hide_event_type_details=1&hide_gdpr_banner=1', text: 'Planifier du temps avec moi', color: '#0069ff', textColor: '#ffffff', branding: true }); }</script>
-<!-- Fin de widget de badge Calendly -->
-<!-- Fin de widget de badge Calendly -->
-
   </body>
   
   </html>

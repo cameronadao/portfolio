@@ -51,14 +51,26 @@
 
   <style>
     body {
-      margin: 0;
-      padding: 0;
-    }
+  font-family: 'Montserrat', sans-serif;
+  background: black;
+  color: #fff;
+  margin: 0;
+}
 
     header {
       padding: 2rem;
       text-align: center;
     }
+
+    nav a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #00ffe7 !important;
+}
 
     header h1 {
       font-size: 2rem;
@@ -131,27 +143,19 @@
   <!-- === Header === -->
   <header>
     <nav>
-      <a href="index.html" class="lien-icone">
-        <img src="Logo/DEVWC_45x45.png" alt="Logo DevWithCam" loading="lazy"/>
-      </a>
-  
+      <img src="Logo/DEVWC_45x45.png" alt="Logo DevWithCam" style="height: 45px;">
       <!-- BOUTON MENU POUR MOBILE -->
-      <div class="burger-menu" id="burger-menu">☰</div>
-      
-      
-  
-      <!-- LIENS DE NAVIGATION -->
-      <div class="nav-links" id="nav-links">
-        <a href="index.html" data-key="navAccueil">Accueil</a>
-        <a href="projets.html" data-key="navProjets">Projets</a>
-        <a href="services.html" data-key="navServices">Services</a>
-        <a href="a-propos.html" data-key="navApropos">À Propos</a>
-        <a href="contact.html" data-key="navContact">Contact</a>
-      </div>
-        <select id="lang-switcher">
-          <option value="fr" data-icon="🇫🇷">🇫🇷</option>
-          <option value="en" data-icon="🇬🇧">🇬🇧</option>
-        </select>
+    <div class="burger-menu" id="burger-menu">☰</div>
+      <div>
+        <a href="index.html#services" class="text-white mx-2">Services</a>
+        <a href="index.html#projets" class="text-white mx-2">Projets</a>
+        <a href="index.html#about" class="text-white mx-2">À propos</a>
+        <a href="index.html#contacts" class="text-white mx-2">Contact</a>
+      <select id="lang-switcher">
+        <option value="fr" data-icon="🇫🇷">🇫🇷</option>
+        <option value="en" data-icon="🇬🇧">🇬🇧</option>
+      </select>
+    </div>
     </nav>
   </header>
 
@@ -247,38 +251,9 @@
     </div>
   </section>
     <!--Pied-de-page-->
- <footer>
-    <div class="footer-container">
-      <div class="footer-logo">
-        <a href="index.html">
-        <img src="Logo/DEVWC_300x300.png" alt="Logo DevWithCam"/> <br>© 2025 DevWithCam
-      </a>
-      </div>
-      <div class="footer-links">
-        <h3>Navigation</h3>
-        <ul>
-          <li><a href="projets.html" data-key="navProjets">Projets</a></li>
-          <li><a href="services.html" data-key="navServices">Services</a></li>
-          <li><a href="a-propos.html" data-key="navApropos">À Propos</a></li>
-          <li><a href="contact.html" data-key="navContact">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-contact">
-        <h3>Contact</h3>
-        <ul>
-          <li><a href="https://www.linkedin.com/in/cameron-adao-683b031bb/" target="_blank"><img src="Logo/LinkedIn_icon.svg.png" width="30" height="30"></a></li>
-          <li><a href="mailto:devwithcam@outlook.com"><img src="Logo/Mail_(iOS).svg.png" width="30" height="30"></a></li>
-          <li><a href="https://linktr.ee/devwithcam" target="_blank"><img src="Logo/linktree-2.svg" width="30" height="30"></a></li>
-        </ul>
-      </div>
-      <div class="footer-data">
-        <h3 data-key="personal_data">Données personnelles</h3>
-        <ul>
-          <li><a href="politique-de-confidentialité.html" data-key="navConfidentialité">Politique de Confidentialité</a></li>
-        </ul>
-      </div>
-    </div>
-  </footer>
+    <footer>
+      <p data-key="footer">© 2025 Cameron Adao | DevWithCam | Tous droits réservés</p>
+    </footer>
   <script>
   
     // Récupère la langue du navigateur (ex : "en-US", "fr-FR")
@@ -331,7 +306,8 @@
         results1: "Plus de 2000 leads qualifiés générés",
         results2: "Prospection 100 % automatisée",
         results3: "CRM synchronisé à chaque prise de rendez-vous",
-        results4: "Outil de ciblage intelligent relié à la CVthèque"
+        results4: "Outil de ciblage intelligent relié à la CVthèque",
+        footer: "© 2025 Cameron Adao | DevWithCam | Tous droits réservés",
       },
     
       en: {
@@ -371,7 +347,8 @@
         results1: "Over 2000 qualified leads generated",
         results2: "100% automated prospecting",
         results3: "CRM synchronized with each appointment booking",
-        results4: "Intelligent targeting tool linked to the CV database"
+        results4: "Intelligent targeting tool linked to the CV database",
+        footer: "© 2025 Cameron Adao | DevWithCam | All rights reserved",
       }
     };
   
