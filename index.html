@@ -516,9 +516,9 @@
       const lang = document.documentElement.lang;
   
       if (lang === "en") {
-        brochureLink.href = "https://devwithcam.netlify.app/brochures/brochure-uk-devwithcam.pdf";
+        brochureLink.href = "https://devwithcam.netlify.app/brochures/brochure-uk.pdf";
       } else {
-        brochureLink.href = "https://devwithcam.netlify.app/brochures/brochure-fr-devwithcam.pdf";
+        brochureLink.href = "https://devwithcam.netlify.app/brochures/brochure-fr.pdf";
       }
     }
   
@@ -541,20 +541,6 @@
 <script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/devwithcam/30min?hide_event_type_details=1&hide_gdpr_banner=1', text: 'Planifier du temps avec moi', color: '#0069ff', textColor: '#ffffff', branding: true }); }</script>
 <!-- Fin de widget de badge Calendly -->
 <!-- Fin de widget de badge Calendly -->
-
-<script>
-  // Ciblage du lien du bouton "Brochure"
-  const brochureLink = document.getElementById('brochure-link');
-
-  // Mise à jour du lien et du texte selon la langue
-  if (lang === 'en') {
-    brochureLink.href = 'brochures/brochure-en.pdf';
-    brochureLink.querySelector('button').textContent = 'Brochure'; // ou 'Download Brochure'
-  } else {
-    brochureLink.href = 'brochures/brochure-fr.pdf';
-    brochureLink.querySelector('button').textContent = 'Brochure'; // ou 'Télécharger la brochure'
-  }
-</script>
 
   </body>
   
