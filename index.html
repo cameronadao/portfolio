@@ -69,6 +69,7 @@
     <a href="#services"><button class="index-button" data-key="services">Services</button></a>
     <a href="#projets"><button class="index-button" data-key="projets">Projets</button></a>
     <a href="https://calendly.com/devwithcam/30min"><button class="index-button" data-key="rdv">📅 Rendez-vous</button></a>
+    <a id="brochure-link" href="" target="_blank"><button class="index-button" data-key="brochure">Brochure & Tarifs</button></a>
   </section>
 
   <section id="projets" class="container mt-5" data-aos="fade-up">
@@ -327,6 +328,7 @@
         services: "Services",
         projets: "Projets",
         rdv: "📅 Prendre rendez-vous",
+        brochure: "Brochure & Tarifs",
         realisations: "Mes Réalisations",
         descriptionprojets: "Découvrez une sélection de mes réalisations : sites web, applications mobiles, tableaux de bord et systèmes de gestion. Chaque projet est conçu avec soin pour allier performance, design et ergonomie, et reflète mon savoir-faire technique et créatif au service de vos besoins.",
         app1: "Technologies : HTML5 + CSS3 + JavaScript (ES6)",
@@ -399,6 +401,7 @@
         services: "Services",
         projets: "Projects",
         rdv: "📅 Book a call",
+        brochure: "Brochure & Pricing",
         realisations: "My Projects",
         descriptionprojets: "Discover a selection of my projects: websites, mobile applications, dashboards, and management systems. Each project is crafted with care to combine performance, design, and usability, reflecting my technical and creative expertise to meet your needs.",
         app1: "Technologies: HTML5 + CSS3 + JavaScript (ES6)",
@@ -538,6 +541,20 @@
 <script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/devwithcam/30min?hide_event_type_details=1&hide_gdpr_banner=1', text: 'Planifier du temps avec moi', color: '#0069ff', textColor: '#ffffff', branding: true }); }</script>
 <!-- Fin de widget de badge Calendly -->
 <!-- Fin de widget de badge Calendly -->
+
+<script>
+  // Ciblage du lien du bouton "Brochure"
+  const brochureLink = document.getElementById('brochure-link');
+
+  // Mise à jour du lien et du texte selon la langue
+  if (lang === 'en') {
+    brochureLink.href = 'brochures/brochure-en.pdf';
+    brochureLink.querySelector('button').textContent = 'Brochure'; // ou 'Download Brochure'
+  } else {
+    brochureLink.href = 'brochures/brochure-fr.pdf';
+    brochureLink.querySelector('button').textContent = 'Brochure'; // ou 'Télécharger la brochure'
+  }
+</script>
 
   </body>
   
